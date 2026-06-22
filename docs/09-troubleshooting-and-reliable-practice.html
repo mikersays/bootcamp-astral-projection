@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>09 · Troubleshooting Plateaus & Building a Reliable Practice — Astral Projection</title>
+  <meta name="description" content="Diagnose why it isn't working with a symptom → cause → fix framework, break through plateaus, build a sustainable sleep-protecting schedule, and run your journal as a one-variable feedback loop.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body data-module="09-troubleshooting-and-reliable-practice">
+  <div class="skyfield"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header"><div class="site-header__bar">
+    <a class="brand" href="index.html" aria-label="Astral Projection — home">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="13" stroke="var(--accent)" stroke-width="1.3" opacity=".5"/><path d="M21 7a10 10 0 1 0 4 9.5A8 8 0 0 1 21 7Z" fill="var(--accent)"/><circle cx="24.5" cy="11" r="1.1" fill="var(--accent-2)"/><circle cx="8" cy="22" r="1" fill="var(--accent-2)"/></svg>
+      </span>
+      <span>Astral Projection<small>Zero → Hero</small></span>
+    </a>
+    <span class="header-spring"></span>
+    <span class="header-progress"><span class="label" data-mini-pct>0%</span>
+      <span class="mini-track"><span class="mini-fill" data-mini-fill></span></span></span>
+    <button class="icon-btn" data-search-open aria-label="Search the course">⌕</button>
+    <button class="icon-btn" data-theme-toggle aria-label="Toggle light or dark theme"><span data-theme-icon>☼</span></button>
+    <button class="icon-btn" data-nav-open aria-label="Open module menu">☰</button>
+  </div></header>
+
+  <!-- nav sheet -->
+  <div class="navsheet" aria-hidden="true">
+    <div class="navsheet__scrim" data-nav-close></div>
+    <nav class="navsheet__panel" aria-label="Course modules">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <h3 style="margin-top:0">Course map</h3>
+        <button class="icon-btn" data-nav-close aria-label="Close menu">✕</button>
+      </div>
+      <a data-module="home" href="index.html"><span class="num"><span>◆</span></span> Course home</a>
+      <h3>Start here</h3>
+      <a data-module="00-orientation" href="00-orientation.html"><span class="num"><span>00</span></span> Orientation</a>
+      <h3>Modules</h3>
+      <a data-module="01-relaxation-and-body-awareness" href="01-relaxation-and-body-awareness.html"><span class="num"><span>01</span></span> Relaxation & Body Awareness</a>
+      <a data-module="02-threshold-and-sleep-timing" href="02-threshold-and-sleep-timing.html"><span class="num"><span>02</span></span> The Threshold & Timing</a>
+      <a data-module="03-energy-and-vibrational-state" href="03-energy-and-vibrational-state.html"><span class="num"><span>03</span></span> Energy & the Vibrational State</a>
+      <a data-module="04-focus-and-quieting-the-mind" href="04-focus-and-quieting-the-mind.html"><span class="num"><span>04</span></span> Focus & Quieting the Mind</a>
+      <a data-module="05-separation-and-exit-techniques" href="05-separation-and-exit-techniques.html"><span class="num"><span>05</span></span> The Exit Techniques</a>
+      <a data-module="06-stabilizing-and-fear-management" href="06-stabilizing-and-fear-management.html"><span class="num"><span>06</span></span> Stabilization & Fear</a>
+      <a data-module="07-navigation-and-the-environment" href="07-navigation-and-the-environment.html"><span class="num"><span>07</span></span> Navigation & the Environment</a>
+      <a data-module="08-return-grounding-and-journaling" href="08-return-grounding-and-journaling.html"><span class="num"><span>08</span></span> Return, Grounding & Journaling</a>
+      <a data-module="09-troubleshooting-and-reliable-practice" href="09-troubleshooting-and-reliable-practice.html" aria-current="page"><span class="num"><span>09</span></span> Troubleshooting & Practice</a>
+      <a data-module="10-advanced-practice-tradition-and-science" href="10-advanced-practice-tradition-and-science.html"><span class="num"><span>10</span></span> Advanced Practice & Science</a>
+      <h3>Finish</h3>
+      <a data-module="capstone" href="capstone.html"><span class="num"><span>★</span></span> Capstone: 30-Day Practice</a>
+      <a data-module="reference" href="reference.html"><span class="num"><span>✦</span></span> Reference & Flashcards</a>
+    </nav>
+  </div>
+
+  <!-- search -->
+  <div class="searchbox" role="dialog" aria-modal="true" aria-label="Search">
+    <div class="search-panel">
+      <input type="search" placeholder="Search modules…  (press / anywhere)" aria-label="Search modules">
+      <div class="search-results"></div>
+    </div>
+  </div>
+
+  <main id="main" class="wrap">
+    <div class="layout">
+      <article class="content">
+
+        <header class="module-header">
+          <p class="kicker"><span class="module-no">Module 09</span> <span class="module-rung">Mastery</span></p>
+          <h1>Troubleshooting Plateaus &amp; Building a Reliable Practice</h1>
+          <p class="module-promise">Diagnose why it isn't working, break through the common plateaus, and turn sporadic attempts into a dependable, sustainable practice.</p>
+          <div class="objectives">
+            <h2>By the end you can</h2>
+            <ul>
+              <li>Diagnose the five usual failure modes straight from your own journal — and apply the <em>matching</em> targeted fix, not a random one.</li>
+              <li>Design a sustainable weekly schedule that protects normal sleep first, rations <span class="term" data-term="wbtb">WBTB</span>, and reads your own burnout signals.</li>
+              <li>Run your journal as a feedback loop: one hypothesis, one variable, a fixed block, then an attributable result.</li>
+              <li>Hold healthy expectations through dry spells — recognising a normal plateau and refusing to overhaul during one.</li>
+            </ul>
+          </div>
+          <p class="prereq-row">Prerequisites:
+            <a class="chip" href="00-orientation.html">00 · Orientation</a>
+            <a class="chip" href="06-stabilizing-and-fear-management.html">06 · Stabilization &amp; Fear</a>
+            <a class="chip" href="08-return-grounding-and-journaling.html">08 · Journaling</a>
+          </p>
+        </header>
+
+        <!-- ===================== INTRO ===================== -->
+        <section id="from-attempts-to-practice" data-track-section="from-attempts-to-practice">
+          <p class="lesson-eyebrow">Orientation</p>
+          <h2>From scattered attempts to a practice you can trust</h2>
+          <p>By now you have done the hard part. You can relax the body (01), find the <span class="term" data-term="hypnagogia">hypnagogic</span> threshold and time your sessions to it (02), raise and steer the <span class="term" data-term="vibrational state">vibrational state</span> (03), hold focus on the edge of sleep (04), apply exit techniques (05), stabilize and meet fear or sleep paralysis calmly (06), navigate the lucid-dream equivalent (07), and return and ground cleanly (08). You also have something even more valuable: <strong>a journal full of real attempts.</strong> Some worked partly. Many didn't. That record is not a list of failures — it is your diagnostic dataset.</p>
+          <p>Most people who stall do not stall because they lack a technique. They stall because they are flying blind: changing three things at once, practicing in random bursts that wreck their sleep, then quitting during a perfectly normal dry spell because it "feels like it's not working." The skill this module teaches is not a new exit method. It is <strong>how to read your own journal like a clinician reads a chart</strong> — symptom, likely cause, one targeted fix — and how to build a schedule and a mindset that keep you going for months instead of two intense weeks followed by burnout.</p>
+          <div class="callout callout-safety">
+            <p class="callout-title">⚠ Binding on everything below</p>
+            <p style="margin:0">This practice runs <em>on</em> your sleep, so it must never run it <em>down</em>. The single most common way people sabotage themselves is over-practice — waking every night, chasing intensity, accumulating sleep debt. People who practice <span class="term" data-term="wbtb">WBTB</span>-style induction very frequently report meaningfully more sleep disruption, and sleep researchers caution that intensive practice should be <strong>limited, not maximized</strong>. A reliable practice is a <em>moderate</em> practice. That is not a compromise; it is the mechanism.</p>
+          </div>
+          <p>Here is the loop you are going to learn to run forever:</p>
+          <pre>Diagnose from the journal
+   → form one hypothesis
+   → change one variable
+   → run it for a fixed block of sessions
+   → read the results
+   → repeat.</pre>
+        </section>
+
+        <!-- ===================== LESSON 1 ===================== -->
+        <section id="diagnostic-framework" data-track-section="diagnostic-framework">
+          <p class="lesson-eyebrow">Lesson 1</p>
+          <h2>The diagnostic framework: symptom → likely cause → fix</h2>
+          <p>Almost every plateau collapses into one of <strong>five failure modes.</strong> Each has a recognizable signature in your journal, a most-likely cause, and a small set of targeted fixes. The discipline is to <em>name the failure mode first</em>, then change exactly one thing.</p>
+          <p>A quick definition refresher, since accurate naming is the whole game:</p>
+          <ul>
+            <li><strong><span class="term" data-term="wbtb">WBTB</span> (Wake Back To Bed):</strong> waking after roughly 4.5–6 hours of sleep, staying up briefly, then returning to bed with intention (02).</li>
+            <li><strong>Hypnagogia:</strong> the threshold imagery, sounds, and drifting thoughts at sleep onset (02).</li>
+            <li><strong><span class="term" data-term="vibrational state">Vibrational state</span>:</strong> the buzzing, electrical, wave-like full-body sensation practitioners report near separation (03).</li>
+            <li><strong>Atonia / <span class="term" data-term="rem">REM</span> atonia:</strong> the natural muscle paralysis of REM sleep; the grounded basis of the "can't move" feeling (06).</li>
+          </ul>
+
+          <h3>The diagnostic table</h3>
+          <p class="faint" style="margin:0 0 .5rem">Scroll the table sideways on a narrow screen.</p>
+          <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--border);border-radius:var(--radius);margin:1rem 0">
+            <table style="border-collapse:collapse;width:100%;min-width:46rem;font-size:.9rem">
+              <thead>
+                <tr style="text-align:left;background:var(--surface-2)">
+                  <th style="padding:.7rem .8rem;border-bottom:1px solid var(--border);font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)">#</th>
+                  <th style="padding:.7rem .8rem;border-bottom:1px solid var(--border);font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)">Symptom (what your journal shows)</th>
+                  <th style="padding:.7rem .8rem;border-bottom:1px solid var(--border);font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)">Most likely cause</th>
+                  <th style="padding:.7rem .8rem;border-bottom:1px solid var(--border);font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)">Targeted fix (change ONE)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="vertical-align:top">
+                  <td style="padding:.7rem .8rem;border-bottom:1px solid var(--border);font-weight:700;color:var(--accent-2)">A</td>
+                  <td style="padding:.7rem .8rem;border-bottom:1px solid var(--border)"><strong>You fall fully asleep.</strong> Entries read "last thing I remember is the body scan," "woke up 3 hours later," no threshold, no vibrations.</td>
+                  <td style="padding:.7rem .8rem;border-bottom:1px solid var(--border)">Practicing too deep into sleep pressure, too horizontal, with too little held intention — the brain takes the easy exit into ordinary sleep.</td>
+                  <td style="padding:.7rem .8rem;border-bottom:1px solid var(--border)"><strong>Adjust WBTB timing</strong> (stay up a little longer, toward the ~20–60 min end, so you're awake enough to hold a thread). <strong>Sit more upright</strong> (prop on pillows or recline; don't lie dead-flat). <strong>Add explicit intention</strong> (a MILD-style phrase as you drift: "next time I'm on the threshold, I'll notice").</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td style="padding:.7rem .8rem;border-bottom:1px solid var(--border);font-weight:700;color:var(--accent-2)">B</td>
+                  <td style="padding:.7rem .8rem;border-bottom:1px solid var(--border)"><strong>You stay aware but never reach vibrations / the threshold proper.</strong> Entries read "relaxed but still clearly awake," "mind never quieted," "no buzzing, no imagery, just lying there."</td>
+                  <td style="padding:.7rem .8rem;border-bottom:1px solid var(--border)">Relaxation not deep enough, <em>or</em> timing wrong (sleep pressure too low — e.g. a fresh evening session — so the threshold is out of reach), <em>or</em> attention has nothing to grip.</td>
+                  <td style="padding:.7rem .8rem;border-bottom:1px solid var(--border)"><strong>Deepen relaxation</strong> (longer, slower tension-release scan from 01). <strong>Fix timing</strong> (move into a WBTB window where the threshold is naturally close). <strong>Add tactile imaging</strong> (Bruce's New Energy Ways from 03 — move felt attention through body zones to <em>manufacture</em> sensation). Note: vibrations appear in only ~60–70% of reported OBEs, so their <em>absence</em> is not by itself a failure.</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td style="padding:.7rem .8rem;border-bottom:1px solid var(--border);font-weight:700;color:var(--accent-2)">C</td>
+                  <td style="padding:.7rem .8rem;border-bottom:1px solid var(--border)"><strong>You exit, then snap straight back.</strong> Entries read "felt myself roll out — instantly back in body," "got out for maybe two seconds," "everything dissolved the moment I noticed I'd done it."</td>
+                  <td style="padding:.7rem .8rem;border-bottom:1px solid var(--border)">The early out-of-body state is fragile and the pull back is strong; usually it's <em>excitement</em> spiking arousal, plus no stabilization applied in the first seconds.</td>
+                  <td style="padding:.7rem .8rem;border-bottom:1px solid var(--border)"><strong>Apply stabilization immediately</strong> (06: look at your hands, engage touch, rub the felt hands together, demand "clarity now," dive deeper). <strong>Manage the excitement spike</strong> ("noticing without grabbing" from 04 — register "I'm out" flatly, like reading a road sign). Don't add a new exit method here; the exit worked.</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td style="padding:.7rem .8rem;border-bottom:1px solid var(--border);font-weight:700;color:var(--accent-2)">D</td>
+                  <td style="padding:.7rem .8rem;border-bottom:1px solid var(--border)"><strong>Fear aborts the session.</strong> Entries read "felt a presence, panicked, opened my eyes," "chest pressure, had to stop," "vibrations got intense and I bailed."</td>
+                  <td style="padding:.7rem .8rem;border-bottom:1px solid var(--border)">The frightening edge — sensed presence, pressure, the paralysis of atonia — triggers the threat response, which (per 06) tends to <em>create</em> what it fears.</td>
+                  <td style="padding:.7rem .8rem;border-bottom:1px solid var(--border)"><strong>Run a fear-management routine</strong> (06: a pre-decided calm script — "expected, uncomfortable, harmless, it passes"; slow breathing; a grounding anchor). <strong>Shorten sessions deliberately</strong> to build tolerance in small doses. <strong>Know your stop conditions</strong> and use them without shame; a clean early exit is a <em>successful</em> fear rep.</td>
+                </tr>
+                <tr style="vertical-align:top">
+                  <td style="padding:.7rem .8rem;font-weight:700;color:var(--accent-2)">E</td>
+                  <td style="padding:.7rem .8rem"><strong>Practice is too rare to build skill.</strong> Entries are sparse and irregular — three attempts this month, a two-week gap, then a burst of five in four nights.</td>
+                  <td style="padding:.7rem .8rem">No schedule. Practice is mood-driven, so it's either nothing or a binge that wrecks sleep (which forces another long gap).</td>
+                  <td style="padding:.7rem .8rem"><strong>Build a sustainable schedule</strong> (Lesson 2): a fixed, modest weekly cadence that protects normal sleep. Consistency at low intensity beats intensity in bursts — the single highest-leverage fix for most stalled practitioners.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Reading the table as a decision tree</h3>
+          <p>If you prefer to walk it top-down, ask these in order. The first "yes" is your failure mode:</p>
+          <pre>START: Open your last 6–10 journal entries.
+
+1. Are most entries blank past the relaxation phase
+   (you keep losing consciousness)?
+        └─ YES → Mode A (falling fully asleep)
+                  → upright posture / WBTB timing / more intention
+        └─ NO ↓
+
+2. Do you stay aware but rarely or never reach
+   vibrations or real threshold imagery?
+        └─ YES → Mode B (never reaching the threshold)
+                  → deeper relaxation / better timing / tactile imaging
+        └─ NO ↓
+
+3. Do you reach the threshold/vibrations and sometimes
+   begin to exit, but get pulled right back?
+        └─ YES → Mode C (snap-back)
+                  → stabilize in the first seconds / damp excitement
+        └─ NO ↓
+
+4. Do sessions end because fear or panic makes you stop?
+        └─ YES → Mode D (fear aborting)
+                  → fear routine / shorter exposures / known stops
+        └─ NO ↓
+
+5. Fewer than ~3 sessions a week, or clumped into
+   irregular bursts?
+        └─ YES → Mode E (too-rare practice)
+                  → build and hold a sustainable schedule
+        └─ NO → Likely a normal plateau (Lesson 4).
+                 Hold the line, keep one variable steady,
+                 keep journaling. Progress here is non-linear.</pre>
+          <div class="callout callout-note">
+            <p class="callout-title">✦ The cardinal rule</p>
+            <p style="margin:0">One symptom, one hypothesis, one change. If you "fix" three things between week one and week two and things improve, you've learned nothing you can repeat. Lesson 3 makes that rigorous.</p>
+          </div>
+          <h3>Keeping the three claim-types distinct</h3>
+          <p>The <span class="tag tag-experiential">experiential</span> layer — the vibrations, the sensed presence, the felt exit — is reliably reported and real-to-you, but not externally verified. The <span class="tag tag-evidenced">evidenced</span> layer — the atonia, and the sleep-cycle timing that makes WBTB work — is grounded: <span class="term" data-term="rem">REM</span> periods lengthen across the night, and the threshold sits near them. Whether you "left your body" or shifted your brain's bodily self-model is <span class="tag tag-interpretive">interpretive</span> — the framework above works identically either way. You are debugging a <em>state you can enter</em>, not proving a metaphysics.</p>
+        </section>
+
+        <!-- ===================== LESSON 2 ===================== -->
+        <section id="sustainable-schedule" data-track-section="sustainable-schedule">
+          <p class="lesson-eyebrow">Lesson 2</p>
+          <h2>Designing a sustainable weekly schedule</h2>
+          <p>A reliable practice lives or dies on the calendar, not on willpower. The goals, in priority order:</p>
+          <ol>
+            <li><strong>Protect normal sleep first.</strong> Always. The practice is a passenger; your health is the vehicle.</li>
+            <li><strong>Practice often enough to build and keep skill</strong> (failure mode E's fix).</li>
+            <li><strong>Avoid burnout and over-practice</strong> — the thing that quietly ends most practices.</li>
+          </ol>
+
+          <h3>The two session types</h3>
+          <div class="lenses">
+            <div class="lens lens-grounded">
+              <h4>◎ Passive / threshold (low cost)</h4>
+              <p class="muted" style="margin:0">An evening or non-WBTB sit. You relax, ride the threshold, perhaps reach vibrations. These don't fragment a night's sleep and can be done more freely. Lower odds of a full exit, but excellent for skill maintenance and for failure-mode-B work.</p>
+            </div>
+            <div class="lens lens-tradition">
+              <h4>★ WBTB (high cost, high yield)</h4>
+              <p class="muted" style="margin:0">You wake ~4.5–6 hours in, stay up 15–60 minutes, return with intention — hitting the long, dense <span class="term" data-term="rem">REM</span> periods of the final 2–3 hours. WBTB + intention (MILD) reaches roughly <strong>46–54% lucidity success</strong> in controlled studies — the most effective approach known. But because it fragments sleep, <strong>this is the session you must ration.</strong></p>
+            </div>
+          </div>
+
+          <h3>The dosing rule</h3>
+          <p>Sleep researchers and lucid-dreaming guides converge on keeping <em>intensive, sleep-fragmenting</em> induction to a low frequency — practiced very frequently it is associated with markedly higher rates of sleep disruption. Translate that into a schedule:</p>
+          <ul>
+            <li><strong>WBTB sessions: 1–3 per week, never on back-to-back nights,</strong> and only on nights you can afford fragmented sleep (no early alarm, no driving or high-stakes work the next morning).</li>
+            <li><strong>Passive/threshold sessions: fill in around them</strong> for skill maintenance, up to about <strong>4–5 total practice sessions per week.</strong></li>
+            <li><strong>At least 2 full nights a week with no practice at all</strong> — for consolidation, neurological recovery, and ordinary life.</li>
+          </ul>
+
+          <h3>A sample sustainable week</h3>
+          <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--border);border-radius:var(--radius);margin:1rem 0">
+            <table style="border-collapse:collapse;width:100%;min-width:34rem;font-size:.9rem">
+              <thead>
+                <tr style="text-align:left;background:var(--surface-2)">
+                  <th style="padding:.6rem .8rem;border-bottom:1px solid var(--border);font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)">Day</th>
+                  <th style="padding:.6rem .8rem;border-bottom:1px solid var(--border);font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)">Session</th>
+                  <th style="padding:.6rem .8rem;border-bottom:1px solid var(--border);font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)">Type</th>
+                  <th style="padding:.6rem .8rem;border-bottom:1px solid var(--border);font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)">Sleep-protection note</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="vertical-align:top"><td style="padding:.6rem .8rem;border-bottom:1px solid var(--border)">Mon</td><td style="padding:.6rem .8rem;border-bottom:1px solid var(--border)">Evening threshold sit, 20–25 min</td><td style="padding:.6rem .8rem;border-bottom:1px solid var(--border)">Passive</td><td style="padding:.6rem .8rem;border-bottom:1px solid var(--border)">Normal bedtime after; no sleep cost.</td></tr>
+                <tr style="vertical-align:top"><td style="padding:.6rem .8rem;border-bottom:1px solid var(--border)">Tue</td><td style="padding:.6rem .8rem;border-bottom:1px solid var(--border)"><strong>Rest</strong></td><td style="padding:.6rem .8rem;border-bottom:1px solid var(--border)">—</td><td style="padding:.6rem .8rem;border-bottom:1px solid var(--border)">No practice. Bank sleep.</td></tr>
+                <tr style="vertical-align:top"><td style="padding:.6rem .8rem;border-bottom:1px solid var(--border)">Wed</td><td style="padding:.6rem .8rem;border-bottom:1px solid var(--border)"><strong>WBTB</strong>, wake ~5 h in, up 30 min, return</td><td style="padding:.6rem .8rem;border-bottom:1px solid var(--border);color:var(--accent)">WBTB</td><td style="padding:.6rem .8rem;border-bottom:1px solid var(--border)">Chosen because Thursday is a light morning.</td></tr>
+                <tr style="vertical-align:top"><td style="padding:.6rem .8rem;border-bottom:1px solid var(--border)">Thu</td><td style="padding:.6rem .8rem;border-bottom:1px solid var(--border)"><strong>Rest</strong></td><td style="padding:.6rem .8rem;border-bottom:1px solid var(--border)">—</td><td style="padding:.6rem .8rem;border-bottom:1px solid var(--border)">Recover from Wednesday's fragmentation.</td></tr>
+                <tr style="vertical-align:top"><td style="padding:.6rem .8rem;border-bottom:1px solid var(--border)">Fri</td><td style="padding:.6rem .8rem;border-bottom:1px solid var(--border)">Evening threshold sit, 20–25 min</td><td style="padding:.6rem .8rem;border-bottom:1px solid var(--border)">Passive</td><td style="padding:.6rem .8rem;border-bottom:1px solid var(--border)">No early Saturday alarm.</td></tr>
+                <tr style="vertical-align:top"><td style="padding:.6rem .8rem;border-bottom:1px solid var(--border)">Sat</td><td style="padding:.6rem .8rem;border-bottom:1px solid var(--border)"><strong>WBTB</strong>, wake ~5 h in, up 30 min, return</td><td style="padding:.6rem .8rem;border-bottom:1px solid var(--border);color:var(--accent)">WBTB</td><td style="padding:.6rem .8rem;border-bottom:1px solid var(--border)">Weekend = no consequence to a broken night.</td></tr>
+                <tr style="vertical-align:top"><td style="padding:.6rem .8rem">Sun</td><td style="padding:.6rem .8rem"><strong>Rest</strong></td><td style="padding:.6rem .8rem">—</td><td style="padding:.6rem .8rem">Two clear rest nights before the new week.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>That's <strong>2 WBTB + 2 passive = 4 sessions</strong>, with <strong>3 rest nights</strong>, WBTB only when the next morning is forgiving. Scale <em>down</em> if your sleep or mood suffers; never scale up past comfortable.</p>
+
+          <div class="callout callout-safety">
+            <p class="callout-title">⚠ Burnout signals — cut back immediately</p>
+            <p style="margin:0 0 .4rem">Any of these means drop WBTB for a week, keep only light passive sits or rest fully:</p>
+            <ul style="margin:0">
+              <li>Daytime grogginess or microsleeps.</li>
+              <li>Dreading the alarm.</li>
+              <li>Irritability or low mood.</li>
+              <li>Difficulty falling back asleep after WBTB.</li>
+              <li>Practice starting to feel compulsive ("I <em>have</em> to nail it tonight").</li>
+            </ul>
+            <p style="margin:.5rem 0 0">The practice will still be there. Resting is not falling behind — it is part of the method.</p>
+          </div>
+        </section>
+
+        <!-- ===================== LESSON 3 ===================== -->
+        <section id="journal-feedback-loop" data-track-section="journal-feedback-loop">
+          <p class="lesson-eyebrow">Lesson 3</p>
+          <h2>The journal as a feedback loop — one variable at a time</h2>
+          <p>Your journal from 08 already captures timing, technique, depth, sensations, fear, what worked, and one adjustment. Now we turn it into an <strong>experiment log.</strong> The method is borrowed straight from how you'd debug anything: hold everything constant, change one input, watch the output.</p>
+
+          <h3>The one-variable rule</h3>
+          <p>If you change WBTB timing <em>and</em> posture <em>and</em> exit technique in the same week, and things get better — or worse — <strong>you cannot attribute the result to anything.</strong> You've spent a week and learned nothing repeatable. So:</p>
+          <div class="callout callout-note">
+            <p class="callout-title">✦ The rule</p>
+            <p style="margin:0">One hypothesis. One variable changed. A fixed block of sessions (a week, or ~4 sessions). Then read the result before changing anything else.</p>
+          </div>
+
+          <h3>Running an experiment</h3>
+          <ol>
+            <li><strong>Diagnose</strong> (Lesson 1): name the single failure mode dominating your recent entries.</li>
+            <li><strong>Hypothesize:</strong> write one sentence. <em>"I fall asleep (mode A) because I'm too horizontal; sitting more upright will keep me on the threshold long enough to reach vibrations."</em></li>
+            <li><strong>Define the variable and the metric.</strong> Variable: posture (flat → 45° recline). Metric: e.g. "reach recognizable vibrations in ≥2 of 4 sessions."</li>
+            <li><strong>Hold everything else constant.</strong> Same WBTB timing, same exit technique, same room. Only posture changes.</li>
+            <li><strong>Run the block</strong> (e.g. the 4 sessions in one week from Lesson 2). Journal each with the <em>same</em> template.</li>
+            <li><strong>Read the result.</strong> Did the metric move? Keep the change if yes; revert and try a different hypothesis if no. <em>Either outcome is information.</em></li>
+            <li><strong>Then, and only then, change the next variable.</strong></li>
+          </ol>
+
+          <h3>A minimal experiment-log template</h3>
+          <pre>EXPERIMENT #__   Weeks: ____ to ____
+Failure mode diagnosed (A–E): ____
+Hypothesis (one sentence): ____________________
+Variable changed (ONE): ____________________
+Everything held constant: ____________________
+Success metric: ____________________
+
+  Session 1 | date | did the change happen? | result vs metric | notes
+  Session 2 | ...
+  Session 3 | ...
+  Session 4 | ...
+
+VERDICT: kept / reverted   Why: ____________________
+Next hypothesis: ____________________</pre>
+          <p>This is how a year of practice compounds instead of looping. Each block either banks a permanent improvement or rules out a dead end — both move you forward.</p>
+        </section>
+
+        <!-- ===================== LESSON 4 ===================== -->
+        <section id="healthy-expectations" data-track-section="healthy-expectations">
+          <p class="lesson-eyebrow">Lesson 4</p>
+          <h2>Healthy expectations &amp; motivation through dry spells</h2>
+          <p>Here is the truth that keeps people in the practice: <strong>progress is uneven and non-linear, and a plateau is not a failure mode.</strong> It is the normal texture of skill acquisition in a domain that runs on sleep, mood, stress, and timing — variables you only partly control.</p>
+          <p>What this actually looks like in a real journal:</p>
+          <ul>
+            <li>A breakthrough week, then three flat weeks with "nothing."</li>
+            <li>A run of vivid threshold states with no exit, then a sudden exit out of nowhere.</li>
+            <li>Results that track your <em>life</em> — dipping when you're stressed, sleeping badly, or traveling, recovering when you're rested. Expected, not a sign the practice is "broken."</li>
+          </ul>
+          <p>Some learners reach a clear OBE in weeks; others mostly get lucid dreams or deep threshold states for a long time — and the curriculum is explicit that <strong>the lucid-dream equivalent and rich threshold states are legitimate outcomes, not consolation prizes.</strong> Measuring yourself only by "full verified exits" guarantees discouragement. Measure the <em>inputs and intermediate skills</em> instead.</p>
+
+          <h3>How to stay motivated honestly</h3>
+          <ul>
+            <li><strong>Track process, not just outcome.</strong> "Did I run my scheduled sessions?" and "Did I journal each one?" are wins you fully control. A well-rested week with zero exits is a <em>successful</em> week.</li>
+            <li><strong>Define progress as a ladder, not a light switch.</strong> Falling asleep → staying aware → reaching the threshold → vibrations → partial separation → brief exit → stabilized exit. Moving <em>one rung</em> is progress. Most "dry spells" are consolidation on a rung.</li>
+            <li><strong>Use the journal as encouragement.</strong> Re-read entries from a month or two ago. The depth you reach casually now was hard then. That delta is invisible day-to-day and obvious across weeks.</li>
+            <li><strong>A dry spell is a signal to hold steady, not to overhaul.</strong> Changing everything at once violates the one-variable rule and makes diagnosis impossible. Keep the schedule, keep one variable steady, keep journaling, keep sleep healthy.</li>
+            <li><strong>When in doubt, rest.</strong> Pushing harder through a dry spell — adding WBTB nights, cutting sleep — is the classic path to burnout <em>and</em> worse results. Resting is sometimes the most productive thing you can do for the practice.</li>
+          </ul>
+          <div class="callout callout-note">
+            <p class="callout-title">✦ Grounded reassurance, not a sales pitch</p>
+            <p style="margin:0">We are not promising nightly flights. We are promising that <em>if</em> you keep a moderate, well-rested, journaled practice and read your own data honestly, you will keep climbing the ladder — and that the flat stretches between rungs are the practice working normally, not failing.</p>
+          </div>
+        </section>
+
+        <!-- ===================== WORKED EXAMPLES ===================== -->
+        <section id="worked-examples" data-track-section="worked-examples">
+          <p class="lesson-eyebrow">Worked examples</p>
+          <h2>Diagnosis in action</h2>
+
+          <div class="worked-example">
+            <h3>Worked example 1 — Diagnosing a real journal stretch</h3>
+            <p><strong>The journal (last six WBTB sessions):</strong></p>
+            <blockquote style="border-left:3px solid var(--border);padding-left:1rem;margin:1rem 0;color:var(--text-soft)">
+              <strong>Mon</strong> — Woke at 5h, stayed up 10 min, lay back flat. Last memory: counting breaths around 20. Woke up at 7:30, no idea what happened.<br>
+              <strong>Wed</strong> — Same: up 10 min, flat on my back. Drifted off during the body scan. Slept till alarm.<br>
+              <strong>Thu</strong> — Tried again (tired from Wednesday). Fell asleep almost instantly.<br>
+              <strong>Sat</strong> — Up 10 min, flat. Got a little hypnagogic imagery, then gone — asleep.<br>
+              <strong>Sun</strong> — Flat, up 10 min. Nothing. Asleep.<br>
+              <strong>Mon</strong> — Same pattern. Starting to think this doesn't work for me.
+            </blockquote>
+            <p><strong>Diagnosis.</strong> Walk the decision tree. Q1: are most entries blank past relaxation because consciousness keeps being lost? <strong>Yes — every entry.</strong> That's <strong>failure mode A: falling fully asleep.</strong> (We don't even reach Q2.) Note also a <em>secondary</em> problem: a back-to-back Wed/Thu attempt while already tired — a sleep-fragmentation and over-practice flag.</p>
+            <p><strong>Prescription (change ONE primary variable).</strong> The cause profile is textbook A: too horizontal, too little wake-up, intention not held. The highest-leverage single change is <strong>posture and wakefulness</strong>: stay up <strong>closer to 25–30 minutes</strong> at WBTB (not 10) and <strong>recline at ~45°</strong> instead of flat. Hold everything else constant. Add a held intention phrase as the <em>one</em> paired tweak only if posture alone doesn't move the metric in the next block. <strong>Metric:</strong> stay conscious to recognizable threshold/vibrations in ≥2 of the next 4 sessions.</p>
+            <p><strong>Also fix the schedule, separately.</strong> Drop the back-to-back attempts. WBTB on non-consecutive, sleep-protected nights only (Lesson 2). This isn't a competing "variable" in the experiment — it's basic sleep protection that should always hold.</p>
+            <p><strong>Why this is the right call:</strong> the symptom is unambiguous and consistent across every entry, so we're not guessing. We change the variable most directly tied to mode A, keep timing/technique constant so the result is attributable, and we separate the <em>sleep-hygiene correction</em> (always do it) from the <em>experimental variable</em> (posture/wakefulness, the thing we're testing).</p>
+          </div>
+
+          <div class="worked-example">
+            <h3>Worked example 2 — A four-week, one-variable experiment</h3>
+            <p><strong>Starting point.</strong> A practitioner reliably reaches strong vibrations but keeps snapping back: <em>"out for two or three seconds, then slammed back into the body, every time."</em> Decision tree → Q3 yes → <strong>failure mode C (snap-back).</strong></p>
+            <p><strong>The experiment.</strong> One hypothesis, one variable, four weekly blocks — but note the discipline: we still only change <strong>one thing per block</strong>, and we don't pile on.</p>
+            <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--border);border-radius:var(--radius);margin:1rem 0">
+              <table style="border-collapse:collapse;width:100%;min-width:48rem;font-size:.86rem">
+                <thead>
+                  <tr style="text-align:left;background:var(--surface-2)">
+                    <th style="padding:.6rem .7rem;border-bottom:1px solid var(--border);font-family:var(--font-mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)">Week</th>
+                    <th style="padding:.6rem .7rem;border-bottom:1px solid var(--border);font-family:var(--font-mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)">Hypothesis</th>
+                    <th style="padding:.6rem .7rem;border-bottom:1px solid var(--border);font-family:var(--font-mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)">The ONE variable</th>
+                    <th style="padding:.6rem .7rem;border-bottom:1px solid var(--border);font-family:var(--font-mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)">Result</th>
+                    <th style="padding:.6rem .7rem;border-bottom:1px solid var(--border);font-family:var(--font-mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)">Verdict</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="vertical-align:top"><td style="padding:.6rem .7rem;border-bottom:1px solid var(--border);font-weight:700">1</td><td style="padding:.6rem .7rem;border-bottom:1px solid var(--border)">Baseline — measure the problem precisely.</td><td style="padding:.6rem .7rem;border-bottom:1px solid var(--border)"><em>Nothing changed.</em></td><td style="padding:.6rem .7rem;border-bottom:1px solid var(--border)">4 sessions, exits in 3, all &lt;3 s, no stabilization attempted.</td><td style="padding:.6rem .7rem;border-bottom:1px solid var(--border)">Confirms mode C. Baseline ~3 s.</td></tr>
+                  <tr style="vertical-align:top"><td style="padding:.6rem .7rem;border-bottom:1px solid var(--border);font-weight:700">2</td><td style="padding:.6rem .7rem;border-bottom:1px solid var(--border)">A stabilization technique in the first seconds will extend the exit.</td><td style="padding:.6rem .7rem;border-bottom:1px solid var(--border)"><strong>Add "look at and rub the hands" immediately on exit</strong> (06).</td><td style="padding:.6rem .7rem;border-bottom:1px solid var(--border)">Exits in 2 of 4; once held ~8 s before snap-back.</td><td style="padding:.6rem .7rem;border-bottom:1px solid var(--border);color:var(--good)"><strong>Keep</strong> (3 s → 8 s).</td></tr>
+                  <tr style="vertical-align:top"><td style="padding:.6rem .7rem;border-bottom:1px solid var(--border);font-weight:700">3</td><td style="padding:.6rem .7rem;border-bottom:1px solid var(--border)">Excitement is spiking arousal and causing the remaining snap-backs.</td><td style="padding:.6rem .7rem;border-bottom:1px solid var(--border)"><strong>Add the "noticing without grabbing" stance</strong> (04). Week-2 change retained.</td><td style="padding:.6rem .7rem;border-bottom:1px solid var(--border)">Exits in 3 of 4; two held 10–15 s; one snap-back when surprised.</td><td style="padding:.6rem .7rem;border-bottom:1px solid var(--border);color:var(--good)"><strong>Keep.</strong> Excitement was real.</td></tr>
+                  <tr style="vertical-align:top"><td style="padding:.6rem .7rem;font-weight:700">4</td><td style="padding:.6rem .7rem">Diving <em>deeper</em> rather than drifting up will further reduce the pull-back.</td><td style="padding:.6rem .7rem"><strong>On exit, intend "down/deeper" instead of floating up</strong> (06). Weeks 2–3 retained.</td><td style="padding:.6rem .7rem">Exits in 3 of 4; best ~20 s, stable enough to attempt a first navigation intent (07).</td><td style="padding:.6rem .7rem;color:var(--good)"><strong>Keep.</strong> Ladder progress.</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p><strong>Outcome.</strong> Over four weeks the practitioner moved from ~3-second snap-backs to ~20-second stabilized exits — climbing several rungs of the Lesson-4 ladder. Crucially, <strong>because only one variable changed per block, they now know <em>which</em> changes did the work</strong> (stabilization + excitement management were the big movers) and can keep them permanently.</p>
+            <p><strong>Why this is the right structure:</strong> each week isolates one cause-fix pair tied to mode C, retains what worked, and uses a concrete metric (exit duration, stabilizations attempted). Sleep stayed protected throughout — 4 sessions/week max, WBTB only on forgiving mornings, rest nights between. Contrast the failure pattern: changing timing <em>and</em> posture <em>and</em> technique in week 1, getting a vague improvement, and never knowing why.</p>
+          </div>
+        </section>
+
+        <!-- ===================== EXERCISES ===================== -->
+        <section id="exercises" data-track-section="exercises">
+          <p class="lesson-eyebrow">Practice</p>
+          <h2>Exercises</h2>
+          <p>Increasing difficulty. Try each before opening its solution.</p>
+
+          <div class="exercise" data-hints>
+            <div class="exercise-head"><span class="exercise-no">Exercise 1</span><span class="exercise-diff">Warm-up</span></div>
+            <p class="exercise-q">For each journal snippet, name the failure mode (A–E) and the <em>first</em> fix you'd reach for. (1) "Stayed perfectly aware the whole 30 minutes. Calm, relaxed — but no buzzing, no imagery, nothing shifted." (2) "Felt the presence near the bed, chest pressure, heart pounding — opened my eyes and turned the light on." (3) "Three attempts in the last five weeks, all clustered last weekend."</p>
+            <div class="hint-step" data-step="hint">Match each to its dominant signature. "Aware but nothing shifts" is about reaching the threshold at all; "panic, light on" is about fear; "clustered, irregular" is about cadence.</div>
+            <div class="hint-step" data-step="hint">One of these is a timing problem, one is a fear-routine problem, one is a scheduling problem. Name the mode <em>before</em> you name the fix.</div>
+            <div class="hint-step" data-step="solution">(1) <strong>Mode B (never reaching the threshold).</strong> First fix: <strong>timing</strong> — a fully-awake, calm-but-no-shift session usually means sleep pressure is too low (e.g. evening), so the threshold is out of reach; move it into a WBTB window. (2) <strong>Mode D (fear aborting).</strong> First fix: a <strong>pre-decided fear script</strong> ("expected, harmless, it passes") plus deliberately <strong>shorter exposures.</strong> (3) <strong>Mode E (too-rare practice).</strong> First fix: <strong>a sustainable schedule</strong> instead of mood-driven binges. <em>Why: each snippet has one dominant signature. Naming it before reaching for a fix is the whole discipline — it stops you from, say, adding an exit technique to a mode-B problem where you never even reach exit.</em></div>
+          </div>
+
+          <div class="exercise" data-hints>
+            <div class="exercise-head"><span class="exercise-no">Exercise 2</span><span class="exercise-diff">Spot the over-practice</span></div>
+            <p class="exercise-q">A practitioner's week: WBTB Mon, WBTB Tue, WBTB Wed, rest Thu, WBTB Fri, WBTB Sat, rest Sun — six sessions, all WBTB, three back-to-back. They report exits early in the week but "by Friday I'm exhausted and can't focus." What's wrong, and what would you change?</p>
+            <div class="hint-step" data-step="hint">Count the WBTB sessions against the dosing rule from Lesson 2. How many is the ceiling, and is "back-to-back" allowed?</div>
+            <div class="hint-step" data-step="solution">Two problems, both sleep-protection violations. (1) <strong>Too many WBTB sessions</strong> — WBTB fragments sleep, so it should be rationed to ~1–3/week, not 4–6. (2) <strong>Back-to-back WBTB nights</strong> (Mon–Tue–Wed) accumulate sleep debt fast — exactly why focus collapses by Friday; sleep-deprived practice is <em>worse</em> practice. <strong>Fix:</strong> cut to <strong>2 WBTB on non-consecutive, sleep-protected nights</strong> (e.g. Wed + Sat), add <strong>1–2 passive evening sits</strong>, keep <strong>2–3 rest nights.</strong> Total ~4 sessions. <em>Why: the early-week exits are seductive but they're borrowing against sleep you then can't repay; the Friday crash is the bill. Reliability comes from a cadence you can hold for months, not a week you can't survive.</em></div>
+          </div>
+
+          <div class="exercise" data-hints>
+            <div class="exercise-head"><span class="exercise-no">Exercise 3</span><span class="exercise-diff">Diagnose the multi-entry journal</span></div>
+            <p class="exercise-q">Tue (WBTB): strong vibrations, pushed them head-to-toe, tried the rope, felt myself lift — got so excited I was basically awake again. Lost it. Thu (WBTB): big vibrations, started the roll-out, halfway out, then "this is really happening!" and snapped back. Sat (WBTB): vibrations, lift-out, out ~2 s, then back; didn't try to stabilize — wasn't sure what to do. Name the failure mode. Is the <em>exit technique</em> the problem? Prescribe the single best first change and a one-variable experiment.</p>
+            <div class="hint-step" data-step="hint">Three different exit methods (rope, roll-out, lift-out) all <em>succeed</em> at producing separation. So the gap can't be the exit method itself — look at what happens in the seconds right after.</div>
+            <div class="hint-step" data-step="hint">Two drivers recur across the entries: an arousal spike ("so excited," "this is really happening!") and an explicit absence ("didn't try to stabilize"). Fix the absence first.</div>
+            <div class="hint-step" data-step="solution"><strong>Failure mode C (exit then snap-back).</strong> The exit technique is <strong>not</strong> the problem — vibrations and separation happen reliably across multiple methods; swapping methods would be a classic misdiagnosis. The real drivers are <strong>(1) an excitement/arousal spike</strong> at exit (Tue, Thu) and <strong>(2) no stabilization applied</strong> (Sat). <strong>Single best first change:</strong> apply a <strong>stabilization technique in the first seconds</strong> (look at the hands, rub them, demand clarity, dive deeper). <strong>One-variable experiment:</strong> Week 1 baseline (exit duration ~2 s). Week 2, change <em>only</em> "apply stabilization immediately," holding timing/posture/technique constant. Metric: exit duration up, or ≥2 of 4 stabilizations attempted. If excitement still dominates, the <em>next</em> block adds "noticing without grabbing" (04) — one new thing at a time. <em>Why: the journal points unambiguously at C, and the wrong move (swapping exit methods) is tempting precisely because the snap-back happens during the exit. Reading across entries reveals the exit works fine and the post-exit handling is the gap.</em></div>
+          </div>
+
+          <div class="exercise" data-hints>
+            <div class="exercise-head"><span class="exercise-no">Exercise 4</span><span class="exercise-diff">Design your own experiment</span></div>
+            <p class="exercise-q">Pick the failure mode that most matches <em>your own</em> recent journal (or, if you have none yet, choose mode A). Write a complete experiment plan using the Lesson 3 template: hypothesis, the single variable, what you'll hold constant, success metric, and the session block.</p>
+            <div class="hint-step" data-step="hint">Start from the template. The hardest discipline is the "held constant" line — list everything you are <em>not</em> touching, so the one change is genuinely isolated.</div>
+            <div class="hint-step" data-step="solution">A model answer for mode A:
+<pre>EXPERIMENT #1   Weeks: Jun 22 – Jun 28
+Failure mode diagnosed: A (falling fully asleep)
+Hypothesis: I lose consciousness before the threshold because
+            I'm flat and barely awake at WBTB; reclining ~45°
+            and staying up longer will keep me on the threshold
+            long enough to reach it.
+Variable changed (ONE): posture + WBTB wakefulness
+            (flat/10 min awake → ~45° recline / ~30 min awake)
+Held constant: same WBTB timing (wake ~5 h in), same room,
+            same relaxation routine, no exit-technique changes,
+            same intention phrase as before.
+Success metric: stay conscious to recognizable threshold
+            imagery or vibrations in ≥2 of 4 sessions
+            (vs 0 of 6 in baseline).
+
+  Session 1 (Wed, WBTB)  | reclined, up 32 min | threshold ~5 min, faint imagery — WIN
+  Session 2 (Fri, passive)| n/a — skill maintenance only
+  Session 3 (Sat, WBTB)  | reclined, up 28 min | vibrations briefly — WIN
+  Session 4 (Mon, WBTB)  | reclined, up 30 min | fell asleep again — miss
+
+VERDICT: kept (2 of 3 WBTB sessions hit the metric)
+Next hypothesis: snap-back now appearing → move to mode C work.</pre>
+            <em>Why this is a good plan: exactly one experimental variable, everything else pinned, a concrete countable metric, a fixed block, and a schedule that keeps WBTB non-consecutive and sleep-protected. The verdict is attributable and it sets up the next experiment.</em></div>
+          </div>
+
+          <div class="exercise" data-hints>
+            <div class="exercise-head"><span class="exercise-no">Exercise 5</span><span class="exercise-diff">Build your weekly schedule</span></div>
+            <p class="exercise-q">Design a 7-day schedule for <em>your</em> real life. Constraints: at most 1–3 WBTB sessions (never back-to-back, only on sleep-protected nights), up to ~4–5 total sessions, at least 2 full rest nights, and a note on each WBTB night explaining why the next morning can absorb fragmented sleep.</p>
+            <div class="hint-step" data-step="hint">Place the WBTB nights first — pin them to the two mornings in your real week that are most forgiving — then fill passive sits and rest nights around them.</div>
+            <div class="hint-step" data-step="solution">A model answer (adapt the days to your own calendar; keep the ratios):
+<pre>Mon  Rest            — Hard Tue morning; bank sleep.
+Tue  Evening sit 20m — Passive; no sleep cost; maintains skill.
+Wed  WBTB ~5h in     — Thu is work-from-home, flexible start.
+Thu  Rest            — Recover from Wed fragmentation.
+Fri  Evening sit 20m — Passive; no early Sat alarm.
+Sat  WBTB ~5h in     — Weekend; a broken night has no cost.
+Sun  Rest            — Two rest nights into the new week.</pre>
+            2 WBTB + 2 passive = 4 sessions; 3 rest nights; WBTB non-consecutive and only before forgiving mornings. <em>Why: it satisfies every constraint and is honest about your week — the right schedule is the one whose WBTB nights land where a fragmented night genuinely won't hurt you.</em></div>
+          </div>
+
+          <div class="exercise" data-hints>
+            <div class="exercise-head"><span class="exercise-no">Exercise 6</span><span class="exercise-diff">The plateau judgment call (hardest)</span></div>
+            <p class="exercise-q">Four solid weeks of consistent, well-rested practice. You reliably reach the threshold and vibrations, you've had two brief stabilized exits earlier — but the last <strong>three weeks</strong> have been "nothing but threshold, no exits." You feel discouraged and are tempted to (a) add two more WBTB nights, (b) switch to a brand-new exit technique you read about, and (c) cut sleep to "go deeper." Evaluate each impulse and state what you should actually do.</p>
+            <div class="hint-step" data-step="hint">Ask of each impulse: does it protect sleep, and does it respect the one-variable rule? Two of the three fail both tests.</div>
+            <div class="hint-step" data-step="hint">You already had stabilized exits with your <em>current</em> approach. What does that tell you about whether the technique is "broken"?</div>
+            <div class="hint-step" data-step="solution"><strong>(a) Add two more WBTB nights → No.</strong> Pushes you toward over-practice and sleep debt; sleep-deprived practice is <em>worse</em>, and it breaks the dosing rule. Discouragement is not a reason to fragment sleep further. <strong>(b) Switch exit technique → Not yet, not impulsively.</strong> You already had stabilized exits with the current approach, so the technique isn't broken. Switching mid-plateau also violates the one-variable rule and destroys attributability. <strong>(c) Cut sleep → Hard no.</strong> The single most counterproductive option — it degrades health and practice both, and the course explicitly rejects sleep restriction. <strong>What to actually do:</strong> recognise this as a <strong>normal, non-linear plateau</strong> (Lesson 4), not a failure mode. Hold the schedule steady, keep one variable constant, keep journaling, protect sleep, and re-read your two-months-ago entries to see how far you've come. If anything, take a <em>lighter</em> week. Plateaus like this commonly break on their own once you stop forcing. <em>Why: the hardest skill in this module is doing less at exactly the moment your instincts scream to do more. All three impulses trade long-term reliability for a short-term feeling of "trying harder," and two actively harm the sleep the whole practice runs on.</em></div>
+          </div>
+        </section>
+
+        <!-- ===================== COMMON MISTAKES ===================== -->
+        <section id="common-mistakes" data-track-section="common-mistakes">
+          <p class="lesson-eyebrow">Watch out</p>
+          <h2>Common mistakes</h2>
+          <div class="callout callout-mistakes">
+            <p class="callout-title">⚠ Common mistakes</p>
+            <ul style="margin:0">
+              <li><strong>Changing many variables at once.</strong> The cardinal sin. Alter timing, posture, and technique together and no result is attributable — you can't repeat or undo it. One hypothesis, one variable, one block.</li>
+              <li><strong>Over-practicing and wrecking your sleep.</strong> Nightly WBTB, back-to-back sessions, or sleep restriction accumulate sleep debt, <em>degrade</em> the practice (tired practice is poor practice), and are associated with real sleep disruption. Ration WBTB; keep rest nights.</li>
+              <li><strong>Quitting during a normal plateau.</strong> Flat stretches are the ordinary texture of this skill, not evidence it's "not working." Most people who quit do so on a plateau that would have broken if they'd held steady and stayed rested.</li>
+              <li><strong>Not journaling enough to diagnose.</strong> Sparse or vague entries make diagnosis impossible — you can't read a chart that isn't there. The framework only works on real data.</li>
+              <li><strong>Chasing intensity over consistency.</strong> Hunting for the most dramatic single session instead of a steady, modest cadence. Consistency at low intensity compounds; intensity in bursts mostly buys sleep debt and a long forced gap.</li>
+              <li><strong>Misdiagnosing by reacting to one entry.</strong> Swapping your exit technique over a single snap-back, when reading <em>across</em> entries shows the exit works and stabilization is the gap. Diagnose from the pattern, not the last bad night.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ===================== QUIZ ===================== -->
+        <section id="checkpoint" data-track-section="checkpoint">
+          <p class="lesson-eyebrow">Checkpoint</p>
+          <h2>Check yourself</h2>
+          <div class="quiz" data-quiz="09-troubleshooting-and-reliable-practice">
+            <div class="quiz-head"><p class="eyebrow">Checkpoint</p></div>
+
+            <div class="question" data-type="mcq" data-answer="b">
+              <p class="q-text">Your last eight journal entries are all blank past the relaxation phase — you keep losing consciousness before anything happens. Which failure mode, and what's the first fix?</p>
+              <ul class="options">
+                <li><button class="option" data-value="a">Mode C — switch your exit technique.</button></li>
+                <li><button class="option" data-value="b">Mode A — sit more upright and stay awake longer at WBTB (and add held intention).</button></li>
+                <li><button class="option" data-value="c">Mode B — add tactile imaging to manufacture vibrations.</button></li>
+                <li><button class="option" data-value="d">Mode E — build a weekly schedule.</button></li>
+              </ul>
+              <div class="q-feedback" hidden><p>Why: losing consciousness before the threshold is mode A — the brain is taking the easy slide into ordinary sleep. Counter it with posture and wakefulness, not a new technique.</p></div>
+            </div>
+
+            <div class="question" data-type="mcq" data-answer="b">
+              <p class="q-text">True or false: if you change three things at once and your results improve, that's an efficient way to make progress.</p>
+              <ul class="options">
+                <li><button class="option" data-value="a">True</button></li>
+                <li><button class="option" data-value="b">False</button></li>
+              </ul>
+              <div class="q-feedback" hidden><p>Why: false. You can't attribute the improvement to any one change, so you've learned nothing repeatable — and can't undo it if results later drop. One variable per block is the rule.</p></div>
+            </div>
+
+            <div class="question" data-type="mcq" data-answer="c">
+              <p class="q-text">Why must WBTB sessions in particular be rationed (e.g. 1–3/week, non-consecutive) rather than done nightly?</p>
+              <ul class="options">
+                <li><button class="option" data-value="a">Because the technique stops working if you repeat it too often.</button></li>
+                <li><button class="option" data-value="b">Because it's against tradition to practice more than three nights.</button></li>
+                <li><button class="option" data-value="c">Because WBTB fragments sleep; done very frequently it accumulates sleep debt, is linked to real sleep disruption, and makes the practice worse.</button></li>
+                <li><button class="option" data-value="d">Because passive sits always have a higher exit rate.</button></li>
+              </ul>
+              <div class="q-feedback" hidden><p>Why: the practice runs on sleep. WBTB wakes you in the night and fragments it; protecting sleep is the mechanism of a reliable practice, not a compromise.</p></div>
+            </div>
+
+            <div class="question" data-type="mcq" data-answer="a">
+              <p class="q-text">You reach vibrations and separate, but snap straight back within seconds, across many sessions. Should your first move be to switch exit techniques?</p>
+              <ul class="options">
+                <li><button class="option" data-value="a">No — this is mode C; the exit works. Apply stabilization in the first seconds and damp the excitement.</button></li>
+                <li><button class="option" data-value="b">Yes — a different exit method will hold you out longer.</button></li>
+                <li><button class="option" data-value="c">Yes — and also add two WBTB nights to get more reps.</button></li>
+                <li><button class="option" data-value="d">No — stop practicing until the plateau passes on its own.</button></li>
+              </ul>
+              <div class="q-feedback" hidden><p>Why: the snap-back happens after a <em>successful</em> exit, so the exit isn't the gap. Stabilize immediately and manage the arousal spike; switching techniques misdiagnoses the problem.</p></div>
+            </div>
+
+            <div class="question" data-type="fill" data-answer="plateau|normal plateau|a plateau">
+              <p class="q-text">Three weeks of consistent, well-rested practice with no exits, after earlier successes. This is not a failure mode — it is a normal, non-linear ______. Fill in the missing word.</p>
+              <input class="fill-input" placeholder="type your answer">
+              <div class="q-feedback" hidden><p>Why: with stable, healthy inputs the right response to a plateau is to hold steady, keep journaling, and protect sleep — not to overhaul everything (which would violate the one-variable rule).</p></div>
+            </div>
+
+            <div class="question" data-type="order" data-answer="diagnose,hypothesize,change,run,read">
+              <p class="q-text">Put the one-variable feedback loop in the correct order.</p>
+              <ul class="order-list">
+                <li class="order-item" data-key="diagnose">Diagnose the dominant failure mode from the journal</li>
+                <li class="order-item" data-key="hypothesize">Form one hypothesis</li>
+                <li class="order-item" data-key="change">Change exactly one variable</li>
+                <li class="order-item" data-key="run">Run a fixed block of sessions</li>
+                <li class="order-item" data-key="read">Read the attributable result before changing anything else</li>
+              </ul>
+              <div class="q-feedback" hidden><p>Why: this is the loop that makes every block attributable — each either banks a permanent improvement or rules out a dead end, so a year of practice accumulates instead of looping.</p></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================== CONFIDENCE / COMPLETE / NOTES ===================== -->
+        <section id="reflect" data-track-section="reflect">
+          <p class="lesson-eyebrow">Reflect</p>
+          <h2>Lock it in</h2>
+          <div class="confidence" data-confidence><span class="c-label">How solid do you feel?</span></div>
+          <div class="mark-complete" data-mark-complete><span class="mc-label" data-mc-text>Not yet complete</span><button class="btn btn-ghost">Mark module complete</button></div>
+          <div class="notes-box" data-notes="09-troubleshooting-and-reliable-practice"><label>Your notes for this module</label><textarea placeholder="Jot what worked, questions, what to try next…"></textarea></div>
+        </section>
+
+        <!-- ===================== RECAP ===================== -->
+        <div class="callout callout-note">
+          <p class="callout-title">✦ You can now</p>
+          <ul>
+            <li><strong>Diagnose the five failure modes from your own journal</strong> — falling asleep (A), never reaching the threshold (B), snapping back (C), fear aborting (D), too-rare practice (E) — and apply the <em>matching</em> fix using the symptom → cause → fix table and decision tree.</li>
+            <li><strong>Design a sustainable weekly schedule</strong> that protects sleep first — rationing WBTB to non-consecutive, sleep-protected nights, filling in with passive sits, keeping real rest nights, and reading the burnout signals that mean cut back.</li>
+            <li><strong>Run your journal as a feedback loop</strong> — one hypothesis, one variable, everything else held constant, a fixed block, then an attributable result before the next change.</li>
+            <li><strong>Hold healthy expectations through dry spells</strong> — knowing progress is non-linear, that plateaus are normal, that the lucid-dream equivalent and deep threshold states are legitimate outcomes, and that resting is often the most productive move.</li>
+          </ul>
+        </div>
+
+        <p>You now have the meta-skill that keeps the whole practice alive: read your own data, change one thing at a time, protect your sleep, and keep climbing the ladder for the long haul. In <strong>Module 10</strong>, you'll place everything you can already <em>do</em> into the wider map — the Monroe Focus levels, Buhlman and Bruce, and the grounded science — and choose your own responsible next direction.</p>
+
+        <!-- ===================== MODULE NAV ===================== -->
+        <nav class="module-nav">
+          <a class="prev" href="08-return-grounding-and-journaling.html"><span class="dir">← Previous</span><span class="ttl">Return, Grounding &amp; Journaling</span></a>
+          <a class="next" href="10-advanced-practice-tradition-and-science.html"><span class="dir">Next →</span><span class="ttl">Advanced Practice, Tradition &amp; Science</span></a>
+        </nav>
+
+      </article>
+
+      <nav class="toc" data-toc><h4>On this page</h4><div data-toc-list></div></nav>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p class="mono" style="letter-spacing:.14em;text-transform:uppercase;font-size:.7rem">Astral Projection · Zero → Hero</p>
+    <p class="foot-disc">This course teaches astral projection / out-of-body experience as a practice of attention and sleep states. It is not medical or psychological treatment and makes no claims that you travel to real, externally verifiable places. Practitioner reports are treated as experiential; the science is presented as evidenced; metaphysical framing is presented as interpretive — and these are never blurred. If intensive practice causes persistent distress, stop and seek support.</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

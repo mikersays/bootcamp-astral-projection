@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Reference · Cheat Sheet, Glossary & What's Next — Astral Projection</title>
+  <meta name="description" content="The whole practice on one screen: a quick-reference cheat sheet, an alphabetical glossary, spaced-repetition flashcards, your achievements and certificate, and grounded further reading.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    /* Reference-page-scoped additive styles (CSS vars only; mobile-first, no fixed widths) */
+    .ref-table{width:100%;border-collapse:collapse;margin:1.1rem 0;font-size:.94rem}
+    .ref-table caption{font-family:var(--font-mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-faint);text-align:left;margin-bottom:.5rem}
+    .ref-table th,.ref-table td{text-align:left;vertical-align:top;padding:.55rem .65rem;border-bottom:1px solid var(--border);line-height:1.5}
+    .ref-table thead th{font-family:var(--font-mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-2);border-bottom:1px solid color-mix(in srgb,var(--accent-2) 40%,var(--border))}
+    .ref-table tbody th{font-family:var(--font-display);font-weight:600;color:var(--text);white-space:nowrap}
+    .ref-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+    .seq{list-style:none;padding:0;margin:1.1rem 0;display:flex;flex-wrap:wrap;gap:.45rem;align-items:stretch}
+    .seq li{display:flex;align-items:center;gap:.45rem}
+    .seq .step{font-family:var(--font-mono);font-size:.74rem;letter-spacing:.04em;background:var(--surface);border:1px solid var(--border);border-radius:99px;padding:.4rem .8rem;color:var(--text-soft);min-height:34px;display:inline-flex;align-items:center}
+    .seq .step b{color:var(--accent);font-weight:600;margin-right:.4rem;font-style:normal}
+    .seq .arrow{color:var(--text-faint);font-size:.85rem}
+    .ref-list{margin:.6rem 0 0;padding-left:1.15rem}
+    .ref-list li{margin:.4rem 0;line-height:1.55}
+    .checklist{list-style:none;padding:0;margin:.8rem 0 0}
+    .checklist li{position:relative;padding:.35rem 0 .35rem 1.9rem;line-height:1.55;border-bottom:1px solid color-mix(in srgb,var(--border) 60%,transparent)}
+    .checklist li:last-child{border-bottom:0}
+    .checklist li::before{content:"";position:absolute;left:0;top:.55rem;width:18px;height:18px;border:1.5px solid color-mix(in srgb,var(--accent-2) 60%,var(--border));border-radius:5px}
+    .checklist li::after{content:"✓";position:absolute;left:3px;top:.32rem;color:var(--accent-2);font-size:.82rem}
+    .ref-grid{display:grid;gap:.9rem;margin:1.3rem 0}
+    @media (min-width:680px){.ref-grid.two{grid-template-columns:1fr 1fr}}
+    .ref-grid .card h3{margin:0 0 .5rem;font-family:var(--font-display);font-size:1.12rem}
+    .ref-grid .card .mono-lead{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:.5rem}
+    .glossary-dl{margin:1.2rem 0 0}
+    .glossary-dl dt{font-family:var(--font-display);font-size:1.08rem;color:var(--accent);margin:1.1rem 0 .25rem;scroll-margin-top:5.4rem}
+    .glossary-dl dt .pron{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.1em;color:var(--text-faint);text-transform:uppercase;margin-left:.5rem}
+    .glossary-dl dd{margin:0 0 .4rem;color:var(--text-soft);line-height:1.6;border-left:2px solid var(--border);padding-left:.9rem}
+    .gloss-jump{display:flex;flex-wrap:wrap;gap:.35rem;margin:1rem 0 0;list-style:none;padding:0}
+    .gloss-jump a{font-family:var(--font-mono);font-size:.72rem;width:30px;height:30px;display:grid;place-items:center;border:1px solid var(--border);border-radius:8px;color:var(--text-faint);text-decoration:none;text-transform:uppercase}
+    .gloss-jump a:hover{color:var(--accent);border-color:var(--accent)}
+    .cert-actions{display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center;margin-top:1.4rem}
+    .cert-lock-note{display:block;font-family:var(--font-mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-faint);margin-top:1.2rem}
+    .ref-refs{margin:1.2rem 0 0;display:grid;gap:.9rem}
+    .ref-refs .refcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.1rem 1.2rem}
+    .ref-refs .refcard h4{margin:0 0 .35rem;font-family:var(--font-display);font-size:1.06rem}
+    .ref-refs .refcard p{margin:.3rem 0;color:var(--text-soft);line-height:1.55;font-size:.95rem}
+    .ref-refs .refcard cite{color:var(--text);font-style:italic}
+    @media print{.site-header,.navsheet,.searchbox,.toc,.module-nav,.site-footer,.skyfield,.skip-link{display:none!important}
+      .certificate{page-break-inside:avoid}}
+  </style>
+</head>
+<body data-module="reference">
+  <div class="skyfield"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header"><div class="site-header__bar">
+    <a class="brand" href="index.html" aria-label="Astral Projection — home">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="13" stroke="var(--accent)" stroke-width="1.3" opacity=".5"/><path d="M21 7a10 10 0 1 0 4 9.5A8 8 0 0 1 21 7Z" fill="var(--accent)"/><circle cx="24.5" cy="11" r="1.1" fill="var(--accent-2)"/><circle cx="8" cy="22" r="1" fill="var(--accent-2)"/></svg>
+      </span>
+      <span>Astral Projection<small>Zero → Hero</small></span>
+    </a>
+    <span class="header-spring"></span>
+    <span class="header-progress"><span class="label" data-mini-pct>0%</span>
+      <span class="mini-track"><span class="mini-fill" data-mini-fill></span></span></span>
+    <button class="icon-btn" data-search-open aria-label="Search the course">⌕</button>
+    <button class="icon-btn" data-theme-toggle aria-label="Toggle light or dark theme"><span data-theme-icon>☼</span></button>
+    <button class="icon-btn" data-nav-open aria-label="Open module menu">☰</button>
+  </div></header>
+
+  <!-- nav sheet -->
+  <div class="navsheet" aria-hidden="true">
+    <div class="navsheet__scrim" data-nav-close></div>
+    <nav class="navsheet__panel" aria-label="Course modules">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <h3 style="margin-top:0">Course map</h3>
+        <button class="icon-btn" data-nav-close aria-label="Close menu">✕</button>
+      </div>
+      <a data-module="home" href="index.html"><span class="num"><span>◆</span></span> Course home</a>
+      <h3>Start here</h3>
+      <a data-module="00-orientation" href="00-orientation.html"><span class="num"><span>00</span></span> Orientation</a>
+      <h3>Modules</h3>
+      <a data-module="01-relaxation-and-body-awareness" href="01-relaxation-and-body-awareness.html"><span class="num"><span>01</span></span> Relaxation & Body Awareness</a>
+      <a data-module="02-threshold-and-sleep-timing" href="02-threshold-and-sleep-timing.html"><span class="num"><span>02</span></span> The Threshold & Timing</a>
+      <a data-module="03-energy-and-vibrational-state" href="03-energy-and-vibrational-state.html"><span class="num"><span>03</span></span> Energy & the Vibrational State</a>
+      <a data-module="04-focus-and-quieting-the-mind" href="04-focus-and-quieting-the-mind.html"><span class="num"><span>04</span></span> Focus & Quieting the Mind</a>
+      <a data-module="05-separation-and-exit-techniques" href="05-separation-and-exit-techniques.html"><span class="num"><span>05</span></span> The Exit Techniques</a>
+      <a data-module="06-stabilizing-and-fear-management" href="06-stabilizing-and-fear-management.html"><span class="num"><span>06</span></span> Stabilization & Fear</a>
+      <a data-module="07-navigation-and-the-environment" href="07-navigation-and-the-environment.html"><span class="num"><span>07</span></span> Navigation & the Environment</a>
+      <a data-module="08-return-grounding-and-journaling" href="08-return-grounding-and-journaling.html"><span class="num"><span>08</span></span> Return, Grounding & Journaling</a>
+      <a data-module="09-troubleshooting-and-reliable-practice" href="09-troubleshooting-and-reliable-practice.html"><span class="num"><span>09</span></span> Troubleshooting & Practice</a>
+      <a data-module="10-advanced-practice-tradition-and-science" href="10-advanced-practice-tradition-and-science.html"><span class="num"><span>10</span></span> Advanced Practice & Science</a>
+      <h3>Finish</h3>
+      <a data-module="capstone" href="capstone.html"><span class="num"><span>★</span></span> Capstone: 30-Day Practice</a>
+      <a data-module="reference" href="reference.html" aria-current="page"><span class="num"><span>✦</span></span> Reference & Flashcards</a>
+    </nav>
+  </div>
+
+  <!-- search -->
+  <div class="searchbox" role="dialog" aria-modal="true" aria-label="Search">
+    <div class="search-panel">
+      <input type="search" placeholder="Search modules…  (press / anywhere)" aria-label="Search modules">
+      <div class="search-results"></div>
+    </div>
+  </div>
+
+  <main id="main" class="wrap">
+    <div class="layout">
+      <article class="content">
+
+        <header class="module-header">
+          <div class="kicker">
+            <span class="module-no">Reference</span>
+            <span class="module-rung">✦ Field Companion</span>
+          </div>
+          <h1>Cheat Sheet, Glossary &amp; What's Next</h1>
+          <p class="module-promise">The whole practice, on one screen. A scannable cheat sheet of the session, a glossary of every term, flashcards drawn from it, your badges and certificate, and an honest map of where to read next. Keep this tab open beside your bed.</p>
+        </header>
+
+        <!-- ============================================================= -->
+        <!-- 1 · QUICK-REFERENCE CHEAT SHEET                                -->
+        <!-- ============================================================= -->
+        <section id="cheat-sheet">
+          <p class="lesson-eyebrow">Section 1</p>
+          <h2>Quick-reference cheat sheet</h2>
+          <p class="muted">Everything you trained, condensed. None of it is a substitute for running the real session — but on a night you can't think clearly, this is the page.</p>
+
+          <h3>The session sequence</h3>
+          <p>One full attempt runs in a single unbroken arc. Pre-exit phases 01–04 flow together as roughly <strong>25–35 minutes</strong> of continuous descent before you ever try to separate.</p>
+          <ol class="seq" aria-label="The full session sequence in order">
+            <li><span class="step"><b>1</b> Relax</span><span class="arrow" aria-hidden="true">→</span></li>
+            <li><span class="step"><b>2</b> Threshold</span><span class="arrow" aria-hidden="true">→</span></li>
+            <li><span class="step"><b>3</b> Vibrational</span><span class="arrow" aria-hidden="true">→</span></li>
+            <li><span class="step"><b>4</b> Focus</span><span class="arrow" aria-hidden="true">→</span></li>
+            <li><span class="step"><b>5</b> Exit</span><span class="arrow" aria-hidden="true">→</span></li>
+            <li><span class="step"><b>6</b> Stabilize</span><span class="arrow" aria-hidden="true">→</span></li>
+            <li><span class="step"><b>7</b> Navigate</span><span class="arrow" aria-hidden="true">→</span></li>
+            <li><span class="step"><b>8</b> Return</span><span class="arrow" aria-hidden="true">→</span></li>
+            <li><span class="step"><b>9</b> Ground</span></li>
+          </ol>
+          <p class="faint" style="font-size:.86rem;margin:.2rem 0 0">Relax (01) → reach the threshold with timing (02) → raise the <span class="term" data-term="vibrational state">vibrational state</span> (03) → hold focus, <span class="term" data-term="focus 10">Focus&nbsp;10</span> (04) → attempt the exit (05) → stabilize and meet any <span class="term" data-term="sleep paralysis">sleep paralysis</span> calmly (06) → navigate, or run the <span class="term" data-term="lucid dream">lucid-dream</span> equivalent (07) → return to the body (08) → ground thoroughly (08).</p>
+
+          <h3>The exit techniques at a glance</h3>
+          <div class="ref-wrap">
+            <table class="ref-table">
+              <caption>Separation methods · imagined movement only — never a physical muscle</caption>
+              <thead>
+                <tr><th scope="col">Technique</th><th scope="col">What you do</th><th scope="col">Best when you feel…</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Lift-out</th><td>Amplify becoming <em>lighter and lighter</em>; intend to float straight up off the bed. Monroe's recommended first move.</td><td>Lightness, floating, weightlessness.</td></tr>
+                <tr><th scope="row"><span class="term" data-term="rope technique">Rope</span></th><td>With imagined hands, grip an imagined rope above your chest and climb hand-over-hand — one concentrated point of pull (Robert Bruce).</td><td>Glued-in; strong vibrations but no direction.</td></tr>
+                <tr><th scope="row">Roll-out</th><td>Without moving a muscle, intend to roll over as if turning in bed; let the felt self twist out beside the body (Monroe).</td><td>Tilting, turning, heaviness on one side; lowest energy.</td></tr>
+                <tr><th scope="row">Limb-lead</th><td>Extend one imagined hand or foot away from the physical one first — a low-commitment test — then expand to a full exit.</td><td>Cautious; you want to test before committing.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="faint" style="font-size:.86rem;margin:.2rem 0 0"><strong>Default order:</strong> lift-out → (no shift after ~20–30&nbsp;s) roll-out → (stuck with strong vibrations) rope. Use limb-lead any time to test. When one stalls, breathe, re-settle, and switch <em>calmly</em> — never force the same door harder.</p>
+
+          <div class="ref-grid two">
+            <div class="card">
+              <span class="mono-lead">Timing rule</span>
+              <h3 style="margin-top:0">WBTB — Wake Back To Bed</h3>
+              <ol class="ref-list">
+                <li>Sleep first <strong>~4.5–6 hours</strong> (clears deep N3; lands you in the REM-rich back third of the night).</li>
+                <li>Wake fully — <strong>get out of bed</strong> (use an alarm).</li>
+                <li>Stay up <strong>~10–30 min</strong> (often 10–15 is enough) — calm activity, <strong>dim light only</strong>. Wake the mind, not the body.</li>
+                <li>Return to bed and fall asleep <strong>holding the intention</strong> to stay aware.</li>
+              </ol>
+              <p class="faint" style="font-size:.84rem;margin:.6rem 0 0">A couple of nights a week on sleep-protected days — not nightly, not sleep deprivation. No caffeine. <span class="term" data-term="wbtb">WBTB</span> + MILD intention reaches the highest reliably reported success rates (~46–54%).</p>
+            </div>
+            <div class="card">
+              <span class="mono-lead">When it gets frightening</span>
+              <h3 style="margin-top:0">Fear &amp; sleep-paralysis response</h3>
+              <p class="faint" style="font-size:.84rem;margin:0 0 .5rem"><strong>Fear creates what it fears.</strong> Your calm is the active ingredient. You are physically safe in bed the whole time.</p>
+              <ol class="ref-list">
+                <li><strong>Name it:</strong> "This is <span class="term" data-term="sleep paralysis">sleep paralysis</span>. I know what this is. It passes."</li>
+                <li><strong>Don't thrash</strong> — fighting the paralysis spikes the fear and the chest-pressure feeling.</li>
+                <li><strong>Turn toward, not away</strong> — meet any sensed presence with calm curiosity or calm indifference.</li>
+                <li><strong>Breathe slowly</strong> — long, easy exhales (in ~4, out ~6); don't force a big breath.</li>
+                <li><strong>To break out:</strong> wiggle one small part — a toe, finger, tongue, or the eyes. Full control returns within seconds.</li>
+              </ol>
+            </div>
+          </div>
+
+          <h3>The grounding checklist</h3>
+          <p class="muted">Run after every session — <strong>ground first, then journal</strong>. Use as many layers as you need; stop when the world looks normal and your body feels like yours.</p>
+          <ul class="checklist" aria-label="Grounding checklist">
+            <li><strong>Return in place.</strong> Stay lying down. Feel your contact points, take three slow breaths, wiggle fingers and toes.</li>
+            <li><strong>Say it plainly:</strong> "Session over. I'm back — in my body, in my bed." Then sit up <em>slowly</em> (bolting upright is the #1 cause of spaciness).</li>
+            <li><strong>Re-engage the senses (5-4-3-2-1):</strong> name 5 things you see, 4 you hear, 3 you touch, 2 you smell, 1 you taste. Often enough on its own.</li>
+            <li><strong>Move &amp; stretch:</strong> stand slowly, feet flat, reach overhead, roll the shoulders, walk a few deliberate steps.</li>
+            <li><strong>Splash cool water</strong> on the face (cool, not icy) — nudges the parasympathetic "rest and digest" response.</li>
+            <li><strong>Light snack or drink</strong> — taste, smell, and chewing pull you fully back.</li>
+            <li><strong>Don't do anything safety-critical</strong> (driving, machinery) until ordinary tasks feel ordinary again.</li>
+          </ul>
+        </section>
+
+        <!-- ============================================================= -->
+        <!-- 2 · GLOSSARY                                                   -->
+        <!-- ============================================================= -->
+        <section id="glossary">
+          <p class="lesson-eyebrow">Section 2</p>
+          <h2>Glossary</h2>
+          <p class="muted">Every term the course uses, defined consistently with the in-page tooltips. Hover or tap any <span class="term" data-term="hypnagogia">underlined term</span> elsewhere on the site for the same definition.</p>
+          <ul class="gloss-jump" aria-label="Jump to glossary letter">
+            <li><a href="#g-a">A</a></li><li><a href="#g-b">B</a></li><li><a href="#g-f">F</a></li>
+            <li><a href="#g-g">G</a></li><li><a href="#g-h">H</a></li><li><a href="#g-l">L</a></li>
+            <li><a href="#g-o">O</a></li><li><a href="#g-r">R</a></li><li><a href="#g-s">S</a></li>
+            <li><a href="#g-t">T</a></li><li><a href="#g-v">V</a></li><li><a href="#g-w">W</a></li>
+          </ul>
+
+          <dl class="glossary-dl">
+            <dt id="g-a">Astral projection</dt>
+            <dd>The practice, as the tradition frames it, of experiencing awareness as if it has separated from the physical body. In this course we treat the experience as real-to-the-practitioner <span class="tag tag-experiential">experiential</span> without asserting that anything literally travels.</dd>
+
+            <dt>Atonia <span class="pron">REM atonia</span></dt>
+            <dd>The natural muscle paralysis of REM sleep that stops you acting out dreams. Awareness arriving while atonia persists is what we experience as <span class="term" data-term="sleep paralysis">sleep paralysis</span>. <span class="tag tag-evidenced">evidenced</span></dd>
+
+            <dt id="g-b">Binaural beats</dt>
+            <dd>An audio illusion: two slightly different tones, one per ear, perceived as a third pulsing beat. Used as a relaxation / entrainment tool; the evidence is mixed. <span class="tag tag-evidenced">evidenced</span></dd>
+
+            <dt id="g-f">Focus 10</dt>
+            <dd>Robert Monroe's term for the state of "mind awake, body asleep" — the foundational target state for projection.</dd>
+
+            <dt>Focus 12</dt>
+            <dd>Monroe's term for a state of "expanded awareness" reached beyond Focus&nbsp;10.</dd>
+
+            <dt id="g-g">Grounding</dt>
+            <dd>A short routine after a session — re-engaging the senses, moving, water, a snack — that dispels lingering dissociation and returns you fully to ordinary awareness.</dd>
+
+            <dt id="g-h">Hemi-Sync</dt>
+            <dd>Monroe's proprietary audio method using <span class="term" data-term="binaural beats">binaural beats</span> plus guided sound to encourage target states. Evidence for binaural beats is mixed. <span class="tag tag-interpretive">interpretive</span></dd>
+
+            <dt>Hypnagogia</dt>
+            <dd>The borderland state at sleep onset, full of drifting imagery, sounds, and thoughts. The launch-pad for most projection attempts. <span class="tag tag-evidenced">evidenced</span></dd>
+
+            <dt id="g-l">Lucid dream</dt>
+            <dd>A dream in which you know you are dreaming. Treated in this course as the legitimate grounded equivalent of a navigated <span class="term" data-term="obe">OBE</span>.</dd>
+
+            <dt id="g-o">OBE — out-of-body experience</dt>
+            <dd>The felt sense of perceiving the world from a location outside the physical body. Grounded research links it to multisensory integration in the <span class="term" data-term="tpj">temporoparietal junction</span>. <span class="tag tag-evidenced">evidenced</span></dd>
+
+            <dt id="g-r">Reality check</dt>
+            <dd>A small test done in waking life (and in dreams) — like pinching your nose and trying to breathe — to discover whether you are dreaming.</dd>
+
+            <dt>REM sleep</dt>
+            <dd>Rapid Eye Movement sleep — the dreaming stage, weighted toward the later part of the night. The body is naturally paralysed (atonia) during it. <span class="tag tag-evidenced">evidenced</span></dd>
+
+            <dt>Rope technique</dt>
+            <dd>Robert Bruce's exit method: reaching with imagined hands and climbing, hand over hand, up an imagined rope above you to create a single point of pull.</dd>
+
+            <dt>New Energy Ways</dt>
+            <dd>Robert Bruce's system of energy-body work built on <span class="term" data-term="tactile imaging">tactile imaging</span>.</dd>
+
+            <dt id="g-s">Silver cord</dt>
+            <dd>In the tradition, the cord said to tether the astral body to the physical so you can always return. Grounded view: a reassuring felt anchor, useful regardless of mechanism. <span class="tag tag-interpretive">interpretive</span></dd>
+
+            <dt>Sleep paralysis</dt>
+            <dd>Waking awareness while the body is still held in REM atonia — often with a sensed presence, chest pressure, or floating. Unpleasant but harmless, and it passes. <span class="tag tag-evidenced">evidenced</span></dd>
+
+            <dt id="g-t">Tactile imaging</dt>
+            <dd>Robert Bruce's technique of moving felt attention (not visual pictures) through zones of the body to raise sensation and energy.</dd>
+
+            <dt>TPJ — temporoparietal junction</dt>
+            <dd>A brain region that integrates vision, balance, and body sense. Disrupting it can produce out-of-body sensations, which is central to the grounded account of OBEs. <span class="tag tag-evidenced">evidenced</span></dd>
+
+            <dt id="g-v">Vibrational state</dt>
+            <dd>A buzzing, electrical, or wave-like full-body sensation many practitioners report just before separation. Reliably reportable and tied to the threshold / REM state; not dangerous. <span class="tag tag-experiential">experiential</span></dd>
+
+            <dt id="g-w">WBTB — Wake Back To Bed</dt>
+            <dd>Waking after roughly 4–6 hours of sleep, staying up briefly, then returning to sleep with intention. It places you near REM, where the threshold is easiest to reach consciously. <span class="tag tag-evidenced">evidenced</span></dd>
+          </dl>
+        </section>
+
+        <!-- ============================================================= -->
+        <!-- 3 · FLASHCARDS                                                 -->
+        <!-- ============================================================= -->
+        <section id="flashcards">
+          <p class="lesson-eyebrow">Section 3</p>
+          <h2>Spaced-repetition flashcards</h2>
+          <p class="muted">Tap a card to flip it; use the arrows to move through the deck. Quiz yourself until the term brings the meaning without effort — that's when it's yours.</p>
+
+          <div class="flashdeck" data-flashdeck>
+            <div class="flashcard"><div class="flashcard__inner">
+              <div class="flashcard__face flashcard__front"><span class="term-word">Hypnagogia</span></div>
+              <div class="flashcard__face flashcard__back"><span class="def">The borderland state at sleep onset — drifting imagery, sounds, and thoughts. The launch-pad for most projection attempts.</span></div>
+            </div></div>
+            <div class="flashcard"><div class="flashcard__inner">
+              <div class="flashcard__face flashcard__front"><span class="term-word">WBTB</span></div>
+              <div class="flashcard__face flashcard__back"><span class="def">Wake Back To Bed — sleep ~4.5–6 h, wake fully and stay up briefly in dim light, then return to sleep with the intention to stay aware. Places you near REM.</span></div>
+            </div></div>
+            <div class="flashcard"><div class="flashcard__inner">
+              <div class="flashcard__face flashcard__front"><span class="term-word">REM atonia</span></div>
+              <div class="flashcard__face flashcard__back"><span class="def">The natural muscle paralysis of REM sleep that stops you acting out dreams. Awareness arriving while it persists is sleep paralysis.</span></div>
+            </div></div>
+            <div class="flashcard"><div class="flashcard__inner">
+              <div class="flashcard__face flashcard__front"><span class="term-word">Sleep paralysis</span></div>
+              <div class="flashcard__face flashcard__back"><span class="def">Waking awareness while the body is still held in REM atonia — often a sensed presence, chest pressure, or floating. Unpleasant but harmless, and it passes.</span></div>
+            </div></div>
+            <div class="flashcard"><div class="flashcard__inner">
+              <div class="flashcard__face flashcard__front"><span class="term-word">Vibrational state</span></div>
+              <div class="flashcard__face flashcard__back"><span class="def">A buzzing, electrical, wave-like full-body sensation many practitioners report just before separation. Tied to the threshold / REM state; not dangerous.</span></div>
+            </div></div>
+            <div class="flashcard"><div class="flashcard__inner">
+              <div class="flashcard__face flashcard__front"><span class="term-word">Focus 10</span></div>
+              <div class="flashcard__face flashcard__back"><span class="def">Robert Monroe's term for "mind awake, body asleep" — the foundational target state for projection.</span></div>
+            </div></div>
+            <div class="flashcard"><div class="flashcard__inner">
+              <div class="flashcard__face flashcard__front"><span class="term-word">Focus 12</span></div>
+              <div class="flashcard__face flashcard__back"><span class="def">Monroe's term for a state of "expanded awareness" reached beyond Focus 10.</span></div>
+            </div></div>
+            <div class="flashcard"><div class="flashcard__inner">
+              <div class="flashcard__face flashcard__front"><span class="term-word">Tactile imaging</span></div>
+              <div class="flashcard__face flashcard__back"><span class="def">Robert Bruce's technique of moving felt attention (not visual pictures) through zones of the body to raise sensation and energy.</span></div>
+            </div></div>
+            <div class="flashcard"><div class="flashcard__inner">
+              <div class="flashcard__face flashcard__front"><span class="term-word">Rope technique</span></div>
+              <div class="flashcard__face flashcard__back"><span class="def">Robert Bruce's exit method: reach with imagined hands and climb, hand over hand, up an imagined rope above you to create a single point of pull.</span></div>
+            </div></div>
+            <div class="flashcard"><div class="flashcard__inner">
+              <div class="flashcard__face flashcard__front"><span class="term-word">Silver cord</span></div>
+              <div class="flashcard__face flashcard__back"><span class="def">In the tradition, the cord said to tether the astral body to the physical. Grounded view: a reassuring felt anchor, useful regardless of mechanism.</span></div>
+            </div></div>
+            <div class="flashcard"><div class="flashcard__inner">
+              <div class="flashcard__face flashcard__front"><span class="term-word">TPJ</span></div>
+              <div class="flashcard__face flashcard__back"><span class="def">Temporoparietal junction — a brain region integrating vision, balance, and body sense. Disrupting it can produce out-of-body sensations; central to the grounded account of OBEs.</span></div>
+            </div></div>
+            <div class="flashcard"><div class="flashcard__inner">
+              <div class="flashcard__face flashcard__front"><span class="term-word">Hemi-Sync</span></div>
+              <div class="flashcard__face flashcard__back"><span class="def">Monroe's proprietary audio method using binaural beats plus guided sound to encourage target states. Evidence for binaural beats is mixed.</span></div>
+            </div></div>
+            <div class="flashcard"><div class="flashcard__inner">
+              <div class="flashcard__face flashcard__front"><span class="term-word">Lucid dream</span></div>
+              <div class="flashcard__face flashcard__back"><span class="def">A dream in which you know you are dreaming. Treated here as the legitimate grounded equivalent of a navigated OBE.</span></div>
+            </div></div>
+            <div class="flashcard"><div class="flashcard__inner">
+              <div class="flashcard__face flashcard__front"><span class="term-word">Reality check</span></div>
+              <div class="flashcard__face flashcard__back"><span class="def">A small test done in waking life and in dreams — like pinching your nose and trying to breathe — to discover whether you are dreaming.</span></div>
+            </div></div>
+            <div class="flashcard"><div class="flashcard__inner">
+              <div class="flashcard__face flashcard__front"><span class="term-word">Grounding</span></div>
+              <div class="flashcard__face flashcard__back"><span class="def">A short routine after a session — re-engaging the senses, moving, water, a snack — that dispels lingering dissociation and returns you fully to ordinary awareness.</span></div>
+            </div></div>
+            <div class="flashcard"><div class="flashcard__inner">
+              <div class="flashcard__face flashcard__front"><span class="term-word">OBE</span></div>
+              <div class="flashcard__face flashcard__back"><span class="def">Out-of-body experience — the felt sense of perceiving the world from a location outside the physical body. Grounded research links it to multisensory integration in the TPJ.</span></div>
+            </div></div>
+          </div>
+        </section>
+
+        <!-- ============================================================= -->
+        <!-- 4 · ACHIEVEMENTS                                               -->
+        <!-- ============================================================= -->
+        <section id="achievements">
+          <p class="lesson-eyebrow">Section 4</p>
+          <h2>Achievements</h2>
+          <p class="muted">Badges light up as you finish checkpoints and modules. They save to this device — no account, nothing leaves your browser.</p>
+          <div class="badge-grid" data-badge-grid></div>
+        </section>
+
+        <!-- ============================================================= -->
+        <!-- 5 · COMPLETION CERTIFICATE                                     -->
+        <!-- ============================================================= -->
+        <section id="certificate">
+          <p class="lesson-eyebrow">Section 5</p>
+          <h2>Completion certificate</h2>
+          <p class="muted">Finish all eleven modules and the capstone, and the certificate below unlocks. Set your name, then print or save it.</p>
+
+          <div class="certificate" data-certificate>
+            <span class="cert-eyebrow">Astral Projection · Zero → Hero</span>
+            <p style="margin:.8rem 0 .2rem;font-family:var(--font-body);color:var(--text-soft)">This certifies that</p>
+            <span class="cert-name" data-cert-name>Astral Traveller</span>
+            <p style="margin:.6rem auto 0;max-width:34rem;color:var(--text-soft);line-height:1.6">has completed the full course — relaxation, the hypnagogic threshold, the vibrational state, focus, the exit techniques, stabilization and fear, navigation, return and grounding, troubleshooting, advanced practice, and the 30-day capstone — and can now run a complete session, calmly and safely, on their own.</p>
+            <div class="cert-actions">
+              <button class="btn btn-ghost" type="button" data-cert-edit>Set your name</button>
+              <button class="btn btn-cyan" type="button" data-cert-print>Print / save certificate</button>
+            </div>
+            <span class="cert-lock-note" data-cert-lock>🔒 Complete all modules and the capstone to unlock</span>
+          </div>
+        </section>
+
+        <!-- ============================================================= -->
+        <!-- 6 · WHERE TO GO NEXT / FURTHER READING                         -->
+        <!-- ============================================================= -->
+        <section id="further-reading">
+          <p class="lesson-eyebrow">Section 6</p>
+          <h2>Where to go next &amp; further reading</h2>
+          <p class="muted">Real sources, presented honestly. We keep the categories apart, as always: practitioner reports are <span class="tag tag-experiential">experiential</span>, the science is <span class="tag tag-evidenced">evidenced</span>, and metaphysical framing is <span class="tag tag-interpretive">interpretive</span>.</p>
+
+          <div class="lenses">
+            <div class="lens lens-tradition">
+              <h4>★ The practitioner tradition <span class="tag tag-experiential">experiential</span></h4>
+              <p class="muted">First-person teachers who built the methods this course teaches. Read them as practice manuals and lived accounts — not as verified physics.</p>
+            </div>
+            <div class="lens lens-grounded">
+              <h4>◎ The grounded science <span class="tag tag-evidenced">evidenced</span></h4>
+              <p class="muted">Peer-reviewed work on the body and brain behind the experience — what's actually measurable about OBEs, sleep, and lucidity.</p>
+            </div>
+          </div>
+
+          <div class="ref-refs">
+            <div class="refcard">
+              <h4>Robert Monroe — <cite>Journeys Out of the Body</cite></h4>
+              <p>The book that launched the modern field. Founded The Monroe Institute and mapped the "Focus levels" (<span class="term" data-term="focus 10">Focus&nbsp;10</span>, <span class="term" data-term="focus 12">Focus&nbsp;12</span>); origin of the roll-out, the lift-out, and the language of the <span class="term" data-term="vibrational state">vibrational state</span>. His audio system, <span class="term" data-term="hemi-sync">Hemi-Sync</span>, uses <span class="term" data-term="binaural beats">binaural beats</span> — evidence for which is mixed. <span class="tag tag-experiential">experiential</span></p>
+            </div>
+            <div class="refcard">
+              <h4>William Buhlman — <cite>Adventures Beyond the Body</cite></h4>
+              <p>An intention-led, accessible approach to inducing and stabilizing the experience, including the verbal-command stabilization moves ("Clarity now!"). A practical companion to a regular practice. <span class="tag tag-experiential">experiential</span></p>
+            </div>
+            <div class="refcard">
+              <h4>Robert Bruce — <cite>Astral Dynamics</cite> &amp; New Energy Ways</h4>
+              <p>The most systematic energy-body manual in the tradition. Source of the <span class="term" data-term="rope technique">rope technique</span> and of <span class="term" data-term="tactile imaging">tactile imaging</span> — moving felt attention through the body to raise sensation. <span class="tag tag-experiential">experiential</span></p>
+            </div>
+            <div class="refcard">
+              <h4>Olaf Blanke et&nbsp;al. — the TPJ &amp; out-of-body research</h4>
+              <p>Blanke, O. &amp; Arzy, S. (2005), "The Out-of-Body Experience: Disturbed Self-Processing at the Temporo-Parietal Junction," <cite>The Neuroscientist</cite> 11(1):16–24; and Blanke et&nbsp;al. (2005) in the <cite>Journal of Neuroscience</cite> 25(3):550–557. Direct cortical stimulation of the <span class="term" data-term="tpj">temporoparietal junction</span> reliably reproduces OBE sensations — the grounded mechanism behind the experience. <span class="tag tag-evidenced">evidenced</span></p>
+            </div>
+            <div class="refcard">
+              <h4>Stephen LaBerge — lucid dreaming research</h4>
+              <p>Founder of the Lucidity Institute; established that lucid dreams are verifiable in the sleep lab (signalled with pre-agreed eye movements during REM) and developed the MILD technique that pairs so effectively with <span class="term" data-term="wbtb">WBTB</span>. The grounded route to a navigated experience. See <cite>Exploring the World of Lucid Dreaming</cite>. <span class="tag tag-evidenced">evidenced</span></p>
+            </div>
+          </div>
+
+          <div class="callout callout-safety">
+            <p class="callout-title">⚠ One last word on safety</p>
+            <p style="margin:0">This is a practice of attention and sleep states — not medicine — and it makes no claim that you travel to real, externally verifiable places. Fear can feel intense but is not dangerous: stay calm, name what's happening, and it passes. If you have a history of psychosis or schizophrenia-spectrum conditions, dissociative disorders, or severe anxiety or panic, talk to a professional before intensive practice. If practice causes persistent distress, stop and seek support. Always <span class="term" data-term="grounding">ground</span> before returning to your day.</p>
+          </div>
+        </section>
+
+        <nav class="module-nav">
+          <a class="prev" href="capstone.html"><span class="dir">← Previous</span><span class="ttl">Capstone: The 30-Day Practice</span></a>
+          <a class="next" href="index.html"><span class="dir">Next →</span><span class="ttl">Course home</span></a>
+        </nav>
+
+      </article>
+
+      <nav class="toc" data-toc><h4>On this page</h4><div data-toc-list></div></nav>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p class="mono" style="letter-spacing:.14em;text-transform:uppercase;font-size:.7rem">Astral Projection · Zero → Hero</p>
+    <p class="foot-disc">This course teaches astral projection / out-of-body experience as a practice of attention and sleep states. It is not medical or psychological treatment and makes no claims that you travel to real, externally verifiable places. Practitioner reports are treated as experiential; the science is presented as evidenced; metaphysical framing is presented as interpretive — and these are never blurred. If intensive practice causes persistent distress, stop and seek support.</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

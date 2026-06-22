@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>★ Capstone · The 30-Day Projection Practice — Astral Projection</title>
+  <meta name="description" content="The integrative capstone: a self-directed, sustainable 30-day projection practice that proves you can run the full session end to end, journal it honestly, and self-diagnose — unlocking the course certificate.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    /* Scoped helpers for the capstone — all colours via CSS vars (brief-compliant) */
+    .rubric-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--border);
+      border-radius:var(--radius);margin:1.3rem 0;background:var(--bg-raised)}
+    table.rubric{border-collapse:collapse;width:100%;min-width:42rem;font-size:.9rem}
+    table.rubric caption{caption-side:top;text-align:left;padding:.9rem 1rem .2rem;
+      font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.12em;
+      font-size:.68rem;color:var(--text-faint)}
+    table.rubric th,table.rubric td{padding:.7rem .85rem;border:1px solid var(--border);
+      vertical-align:top;text-align:left}
+    table.rubric thead th{background:var(--surface-2);font-family:var(--font-mono);
+      font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-soft)}
+    table.rubric tbody th{background:var(--surface);font-weight:600;color:var(--text);width:11rem}
+    table.rubric tbody td{color:var(--text-soft)}
+    table.rubric td.lvl-hero{color:var(--text)}
+    table.rubric thead th.lvl-hero{color:var(--accent)}
+    .proto{margin:1.3rem 0;padding-left:0;list-style:none;counter-reset:proto}
+    .proto>li{position:relative;counter-increment:proto;padding:.85rem 0 .85rem 3rem;
+      border-bottom:1px solid var(--border)}
+    .proto>li:last-child{border-bottom:none}
+    .proto>li::before{content:counter(proto,decimal-leading-zero);position:absolute;left:0;top:.85rem;
+      font-family:var(--font-mono);font-size:.78rem;letter-spacing:.04em;color:var(--accent-2);
+      border:1px solid var(--border);border-radius:6px;padding:.15rem .4rem;min-width:2rem;text-align:center}
+    .proto .step-name{font-family:var(--font-display);font-size:1.05rem;display:block}
+    .proto .step-mod{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.06em;
+      text-transform:uppercase;color:var(--text-faint)}
+    .proto .step-mod a{color:var(--accent)}
+    details.solution{margin:1.2rem 0;border:1px solid var(--border);border-radius:var(--radius);
+      background:var(--bg-raised);overflow:hidden}
+    details.solution>summary{cursor:pointer;list-style:none;padding:1rem 1.1rem;
+      font-family:var(--font-mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;
+      color:var(--accent-2);display:flex;align-items:center;gap:.6rem;min-height:44px}
+    details.solution>summary::-webkit-details-marker{display:none}
+    details.solution>summary::before{content:"▸";color:var(--accent)}
+    details.solution[open]>summary::before{content:"▾"}
+    details.solution>summary:hover{color:var(--accent)}
+    details.solution .solution-body{padding:0 1.1rem 1.1rem;border-top:1px solid var(--border)}
+    .journal-entry{border-left:2px solid var(--border);padding:.2rem 0 .2rem 1rem;margin:1rem 0}
+    .journal-entry .je-meta{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.04em;
+      color:var(--text-faint);text-transform:uppercase}
+    .commit-grid{display:grid;gap:.7rem;margin:1.2rem 0;grid-template-columns:1fr}
+    @media (min-width:680px){.commit-grid{grid-template-columns:repeat(2,1fr)}}
+    .commit-grid .commit-cell{border:1px solid var(--border);border-radius:var(--radius);
+      padding:.95rem 1.05rem;background:var(--surface)}
+    .commit-grid .commit-cell b{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.08em;
+      text-transform:uppercase;color:var(--accent-2);display:block;margin-bottom:.3rem}
+    .done-list{list-style:none;padding-left:0;margin:1rem 0}
+    .done-list li{padding:.45rem 0 .45rem 1.8rem;position:relative;border-bottom:1px solid var(--border)}
+    .done-list li:last-child{border-bottom:none}
+    .done-list li::before{content:"☐";position:absolute;left:0;top:.45rem;color:var(--accent)}
+  </style>
+</head>
+<body data-module="capstone">
+  <div class="skyfield"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header"><div class="site-header__bar">
+    <a class="brand" href="index.html" aria-label="Astral Projection — home">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="13" stroke="var(--accent)" stroke-width="1.3" opacity=".5"/><path d="M21 7a10 10 0 1 0 4 9.5A8 8 0 0 1 21 7Z" fill="var(--accent)"/><circle cx="24.5" cy="11" r="1.1" fill="var(--accent-2)"/><circle cx="8" cy="22" r="1" fill="var(--accent-2)"/></svg>
+      </span>
+      <span>Astral Projection<small>Zero → Hero</small></span>
+    </a>
+    <span class="header-spring"></span>
+    <span class="header-progress"><span class="label" data-mini-pct>0%</span>
+      <span class="mini-track"><span class="mini-fill" data-mini-fill></span></span></span>
+    <button class="icon-btn" data-search-open aria-label="Search the course">⌕</button>
+    <button class="icon-btn" data-theme-toggle aria-label="Toggle light or dark theme"><span data-theme-icon>☼</span></button>
+    <button class="icon-btn" data-nav-open aria-label="Open module menu">☰</button>
+  </div></header>
+
+  <!-- nav sheet -->
+  <div class="navsheet" aria-hidden="true">
+    <div class="navsheet__scrim" data-nav-close></div>
+    <nav class="navsheet__panel" aria-label="Course modules">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <h3 style="margin-top:0">Course map</h3>
+        <button class="icon-btn" data-nav-close aria-label="Close menu">✕</button>
+      </div>
+      <a data-module="home" href="index.html"><span class="num"><span>◆</span></span> Course home</a>
+      <h3>Start here</h3>
+      <a data-module="00-orientation" href="00-orientation.html"><span class="num"><span>00</span></span> Orientation</a>
+      <h3>Modules</h3>
+      <a data-module="01-relaxation-and-body-awareness" href="01-relaxation-and-body-awareness.html"><span class="num"><span>01</span></span> Relaxation & Body Awareness</a>
+      <a data-module="02-threshold-and-sleep-timing" href="02-threshold-and-sleep-timing.html"><span class="num"><span>02</span></span> The Threshold & Timing</a>
+      <a data-module="03-energy-and-vibrational-state" href="03-energy-and-vibrational-state.html"><span class="num"><span>03</span></span> Energy & the Vibrational State</a>
+      <a data-module="04-focus-and-quieting-the-mind" href="04-focus-and-quieting-the-mind.html"><span class="num"><span>04</span></span> Focus & Quieting the Mind</a>
+      <a data-module="05-separation-and-exit-techniques" href="05-separation-and-exit-techniques.html"><span class="num"><span>05</span></span> The Exit Techniques</a>
+      <a data-module="06-stabilizing-and-fear-management" href="06-stabilizing-and-fear-management.html"><span class="num"><span>06</span></span> Stabilization & Fear</a>
+      <a data-module="07-navigation-and-the-environment" href="07-navigation-and-the-environment.html"><span class="num"><span>07</span></span> Navigation & the Environment</a>
+      <a data-module="08-return-grounding-and-journaling" href="08-return-grounding-and-journaling.html"><span class="num"><span>08</span></span> Return, Grounding & Journaling</a>
+      <a data-module="09-troubleshooting-and-reliable-practice" href="09-troubleshooting-and-reliable-practice.html"><span class="num"><span>09</span></span> Troubleshooting & Practice</a>
+      <a data-module="10-advanced-practice-tradition-and-science" href="10-advanced-practice-tradition-and-science.html"><span class="num"><span>10</span></span> Advanced Practice & Science</a>
+      <h3>Finish</h3>
+      <a data-module="capstone" href="capstone.html" aria-current="page"><span class="num"><span>★</span></span> Capstone: 30-Day Practice</a>
+      <a data-module="reference" href="reference.html"><span class="num"><span>✦</span></span> Reference & Flashcards</a>
+    </nav>
+  </div>
+
+  <!-- search -->
+  <div class="searchbox" role="dialog" aria-modal="true" aria-label="Search">
+    <div class="search-panel">
+      <input type="search" placeholder="Search modules…  (press / anywhere)" aria-label="Search modules">
+      <div class="search-results"></div>
+    </div>
+  </div>
+
+  <main id="main" class="wrap">
+    <div class="layout">
+      <article class="content">
+
+        <!-- ============ MODULE HEADER ============ -->
+        <header class="module-header">
+          <p class="kicker"><span class="module-no">CAPSTONE</span> <span class="module-rung">Capstone</span></p>
+          <h1>The 30-Day Projection Practice</h1>
+          <p class="module-promise">No new technique here — this is where you <em>prove it</em>. Over one sustainable month you'll run the complete session on your own, end to end, journal every attempt, and self-diagnose like a practitioner. Finish this and you've done the thing the whole course was for: an independent, healthy, repeatable practice you can keep for life. Completing the capstone unlocks your course <a href="reference.html">certificate</a>.</p>
+          <div class="objectives">
+            <h2>By the end you can</h2>
+            <ul>
+              <li>Run a full projection session unaided — relax, threshold, vibrational state, exit, stabilize, navigate (or its lucid-dream equivalent), return, and ground — without a guide.</li>
+              <li>Sustain a real ~4–5 sessions/week practice for 30 days that <strong>protects normal sleep</strong>, and keep a structured journal you actually use.</li>
+              <li>Meet fear and <span class="term" data-term="sleep paralysis">sleep paralysis</span> calmly, return and ground cleanly every time, and know your own stop conditions.</li>
+              <li>Self-diagnose your personal failure modes from your journal and name the one adjustment that helped most — keeping <span class="tag tag-experiential">experiential</span>, <span class="tag tag-evidenced">evidenced</span>, and <span class="tag tag-interpretive">interpretive</span> claims apart.</li>
+            </ul>
+          </div>
+          <p class="prereq-row">Prerequisites:
+            <a class="chip" href="00-orientation.html">00 · Orientation</a>
+            <a class="chip" href="10-advanced-practice-tradition-and-science.html">10 · Advanced & Science</a>
+            <span class="chip">…and 01–09 (the complete taught curriculum)</span>
+          </p>
+        </header>
+
+        <!-- ============ THE BRIEF ============ -->
+        <section id="the-brief" data-track-section="the-brief">
+          <p class="lesson-eyebrow">The brief</p>
+          <h2>What you're committing to</h2>
+          <p>The capstone is a <strong>self-directed 30-day cycle</strong>: a real projection practice that you run and document, proving you can independently execute the whole zero→hero skill set and reason about it honestly. It is deliberately sustainable, not heroic. The goal is not "force an OBE in 30 days" — results vary widely, and a month of deep threshold states and <span class="term" data-term="lucid dream">lucid dreams</span> is a legitimate, successful outcome. The goal is <em>capability and consistency</em>: that you can sit down (or wake for a <span class="term" data-term="wbtb">WBTB</span> session) and run the sequence cleanly, on your own, again and again.</p>
+
+          <div class="commit-grid">
+            <div class="commit-cell"><b>The schedule</b><p class="muted" style="margin:0">~4–5 sessions per week for four weeks. Put your 1–2 <span class="term" data-term="wbtb">WBTB</span> sessions on nights you can sleep in afterward. The rest are shorter relaxation/threshold sittings that don't cost you sleep.</p></div>
+            <div class="commit-cell"><b>The space &amp; journal</b><p class="muted" style="margin:0">Re-set your dedicated space (Module 00). Open a fresh journal section. Every session gets a structured entry — no exceptions, even the "nothing happened" ones.</p></div>
+            <div class="commit-cell"><b>The weekly review</b><p class="muted" style="margin:0">Once a week, run the troubleshooting loop (Module 09): read your entries, form <em>one</em> hypothesis, change <em>one</em> thing, track the result the following week.</p></div>
+            <div class="commit-cell"><b>The protector</b><p class="muted" style="margin:0">Sleep comes first. If the practice starts eroding your rest or mood, you scale back — that's part of passing, not a failure. No drugs, no sleep deprivation as technique.</p></div>
+          </div>
+
+          <div class="callout callout-safety">
+            <p class="callout-title">⚠ Re-affirm this before day one</p>
+            <p>This is a practice of attention and sleep states — <strong>not medicine, not therapy, and not verified travel</strong>. You never go anywhere your body can't follow you back from. Fear and <span class="term" data-term="sleep paralysis">sleep paralysis</span> can feel intense but are <strong>not dangerous</strong> and they pass. <strong>If you have a history of psychosis or schizophrenia-spectrum conditions, dissociative disorders, or severe anxiety or panic, do not begin this intensive 30-day cycle without first consulting a professional</strong> — defer or adapt it. Stop conditions are real: if any session brings persistent distress or dissociation that doesn't settle with grounding, end the cycle, ground, and seek support. Re-read Module 00 and Module 06 before you start.</p>
+          </div>
+
+          <h3>What "done" means</h3>
+          <p>You've completed the capstone when all of the following are true. This is the bar; mark the capstone complete (at the bottom) only when you can honestly tick every line.</p>
+          <ul class="done-list">
+            <li>You ran <strong>~16–20 sessions across four weeks</strong> (the ~4–5/week target), each one journaled with the structured template.</li>
+            <li>You can run the <strong>full session end to end unaided</strong> — through relax → threshold → vibrational → focus → exit → stabilize → navigate/lucid → return → ground.</li>
+            <li>You reached <strong>at least one clear separation experience <em>or</em> stabilized lucid dream</strong>, and ran <strong>at least one navigated excursion with a set intention</strong>.</li>
+            <li>You <strong>met fear or sleep paralysis at least once without panic</strong>, and you <strong>returned and grounded cleanly every single time</strong>.</li>
+            <li>You ran a <strong>weekly review</strong> each week, and you wrote a <strong>final self-diagnosis</strong>: your personal failure modes plus the one adjustment that helped most.</li>
+            <li>You self-assess at <strong>"Hero" on a majority of the rubric rows</strong> below — honestly.</li>
+          </ul>
+        </section>
+
+        <!-- ============ THE SESSION PROTOCOL ============ -->
+        <section id="session-protocol" data-track-section="session-protocol">
+          <p class="lesson-eyebrow">The protocol</p>
+          <h2>The full session you run each time</h2>
+          <p class="muted">This is the spine of the capstone — the same nine-step arc, every session. Each step links to the module that teaches it. On shorter non-WBTB nights you may stop at step 5 (a pure threshold/vibrational sitting); on WBTB nights you run the whole thing. Movement at the exit is <em>imagined</em>, never physical muscle.</p>
+
+          <ol class="proto">
+            <li>
+              <span class="step-name">Relax — build the platform</span>
+              <span class="step-mod">From <a href="01-relaxation-and-body-awareness.html">Module 01 · Relaxation</a></span>
+              <p class="muted" style="margin:.4rem 0 0">Supine, neutral, warm. Progressive tension-and-release, then a slow head-to-toe body scan with long out-breaths until the body is heavy and still.</p>
+            </li>
+            <li>
+              <span class="step-name">Reach the threshold — mind awake, body asleep</span>
+              <span class="step-mod">From <a href="02-threshold-and-sleep-timing.html">Module 02 · Threshold &amp; Timing</a></span>
+              <p class="muted" style="margin:.4rem 0 0">Let the body cross into sleep while a thin thread of awareness stays lit (<span class="term" data-term="focus 10">Focus 10</span>). Watch <span class="term" data-term="hypnagogia">hypnagogic</span> imagery drift up without grabbing. WBTB timing makes this far easier.</p>
+            </li>
+            <li>
+              <span class="step-name">Raise the vibrational state</span>
+              <span class="step-mod">From <a href="03-energy-and-vibrational-state.html">Module 03 · Energy &amp; Vibrations</a></span>
+              <p class="muted" style="margin:.4rem 0 0">Move felt attention (<span class="term" data-term="tactile imaging">tactile imaging</span>) head-to-toe to invite the buzzing <span class="term" data-term="vibrational state">vibrational state</span>. Welcome it — it's harmless — and steady it into a wave.</p>
+            </li>
+            <li>
+              <span class="step-name">Hold focus — calm but alert</span>
+              <span class="step-mod">From <a href="04-focus-and-quieting-the-mind.html">Module 04 · Focus</a></span>
+              <p class="muted" style="margin:.4rem 0 0">Single-pointed, quiet, undisturbed. The hard part: do not get excited — excitement ends it. Notice without grabbing; let the state ripen.</p>
+            </li>
+            <li>
+              <span class="step-name">Exit — attempt separation</span>
+              <span class="step-mod">From <a href="05-separation-and-exit-techniques.html">Module 05 · Exit Techniques</a></span>
+              <p class="muted" style="margin:.4rem 0 0">Try the <span class="term" data-term="rope technique">rope</span>, the roll-out, the lift-out, or a limb-lead. If the first doesn't take, switch calmly to a second — never force.</p>
+            </li>
+            <li>
+              <span class="step-name">Stabilize — and meet fear calmly</span>
+              <span class="step-mod">From <a href="06-stabilizing-and-fear-management.html">Module 06 · Stabilization &amp; Fear</a></span>
+              <p class="muted" style="margin:.4rem 0 0">The instant you separate, engage the senses: look at your hands, touch a surface, demand clarity, "dive" deeper. If <span class="term" data-term="sleep paralysis">sleep paralysis</span> arrives, meet it with "this is expected, it passes." Fear creates what it fears — stay curious.</p>
+            </li>
+            <li>
+              <span class="step-name">Navigate — or run the lucid-dream equivalent</span>
+              <span class="step-mod">From <a href="07-navigation-and-the-environment.html">Module 07 · Navigation</a></span>
+              <p class="muted" style="margin:.4rem 0 0">Move with intention toward a pre-set destination; hold the environment when it dissolves; use the <span class="term" data-term="silver cord">silver cord</span> (or your chosen anchor) as reassurance of return. Landed in a dream instead? Run a <span class="term" data-term="reality check">reality check</span>, stabilize the <span class="term" data-term="lucid dream">lucid dream</span>, and navigate that — it counts.</p>
+            </li>
+            <li>
+              <span class="step-name">Return — deliberately, not yanked</span>
+              <span class="step-mod">From <a href="08-return-grounding-and-journaling.html">Module 08 · Return &amp; Grounding</a></span>
+              <p class="muted" style="margin:.4rem 0 0">Intend return / follow the felt cord / re-engage the body and open the physical eyes. Re-inhabit the body calmly rather than snapping back in alarm.</p>
+            </li>
+            <li>
+              <span class="step-name">Ground &amp; journal</span>
+              <span class="step-mod">From <a href="08-return-grounding-and-journaling.html">Module 08 · Return &amp; Grounding</a></span>
+              <p class="muted" style="margin:.4rem 0 0"><span class="term" data-term="grounding">Ground</span>: re-engage the senses, move and stretch, cool water, a light snack, a short walk before anything important. Then write the structured journal entry while it's fresh — every session, including the quiet ones.</p>
+            </li>
+          </ol>
+
+          <p>Run it once now with the guided player set to the full preset, so the arc is in your body before day one. The descent meter shows you the climb from Awake → Relaxed → Threshold → Vibrational → Exit.</p>
+          <div data-session-player="full"></div>
+        </section>
+
+        <!-- ============ WEEKLY MILESTONES ============ -->
+        <section id="milestones" data-track-section="milestones">
+          <p class="lesson-eyebrow">The arc</p>
+          <h2>Four weekly milestones</h2>
+          <p class="muted">Each week has a focus, concrete goals, and a journaling prompt. Don't rush ahead — a solid platform in Week 1 makes Weeks 3–4 possible. If a week's goals aren't met, repeat it; the calendar is a guide, not a deadline.</p>
+
+          <div class="worked-example">
+            <h3>Week 1 — Platform</h3>
+            <p><strong>Focus:</strong> body and threshold, and the journal habit. No exit attempts yet.</p>
+            <p><strong>Goals:</strong> reach deep relaxation reliably on demand; recognize the <span class="term" data-term="hypnagogia">hypnagogic</span> threshold on most sittings; complete a journal entry after <em>every</em> session; internalize the safety/stop checklist so it's automatic.</p>
+            <p style="margin-bottom:0"><strong>Journal each session:</strong> how long to reach stillness, what threshold imagery appeared, whether you fell fully asleep, mood before/after, and one thing to adjust next time.</p>
+          </div>
+
+          <div class="worked-example">
+            <h3>Week 2 — Energy &amp; edge</h3>
+            <p><strong>Focus:</strong> the <span class="term" data-term="vibrational state">vibrational state</span> and sustained focus on the edge.</p>
+            <p><strong>Goals:</strong> induce and control vibrations on most attempts (push them head-to-toe, make a wave); sit on the threshold with <span class="term" data-term="focus 10">Focus 10</span> stable — neither falling asleep nor snapping awake — for progressively longer; add your first WBTB session if you haven't.</p>
+            <p style="margin-bottom:0"><strong>Journal each session:</strong> did vibrations come, how strong, could you steer them; how long you held the edge and what pulled you off it (sleep vs. excitement); your WBTB timing and whether it helped.</p>
+          </div>
+
+          <div class="worked-example">
+            <h3>Week 3 — Exit &amp; stabilize</h3>
+            <p><strong>Focus:</strong> separation, and meeting the frightening edge.</p>
+            <p><strong>Goals:</strong> at least one clear separation experience <em>or</em> stabilized <span class="term" data-term="lucid dream">lucid dream</span>; meet <span class="term" data-term="sleep paralysis">sleep paralysis</span> or fear at least once <em>without panic</em>; use stabilization (hands, touch, "dive") to extend duration beyond the first few seconds. Keep sessions short to build tolerance.</p>
+            <p style="margin-bottom:0"><strong>Journal each session:</strong> which exit technique you tried and what the separation felt like; any fear or paralysis and exactly how you responded; what stabilization did to the duration; the moment it ended and why.</p>
+          </div>
+
+          <div class="worked-example">
+            <h3>Week 4 — Navigate, return, refine</h3>
+            <p><strong>Focus:</strong> intention, clean return, and honest self-diagnosis.</p>
+            <p><strong>Goals:</strong> one navigated excursion (or lucid dream) toward a <em>pre-set intention</em> — a place, a question, an object; a <strong>deliberate, clean return and grounding every single time</strong>; and a written final self-diagnosis of your personal failure modes plus the one adjustment that helped most.</p>
+            <p style="margin-bottom:0"><strong>Journal each session:</strong> your set intention and what actually happened; how navigation and orientation held; the quality of your return and grounding; and — at week's end — your full self-diagnosis across the month.</p>
+          </div>
+        </section>
+
+        <!-- ============ RUBRIC ============ -->
+        <section id="rubric" data-track-section="rubric">
+          <p class="lesson-eyebrow">Self-assessment</p>
+          <h2>The grading rubric</h2>
+          <p>Grade yourself honestly against this rubric — ideally at the end of each week, definitely at the end of the month. The bar for "done" is <strong>Hero on a majority of rows</strong>. Where you're still Emerging or Developing, that row <em>is</em> your next hypothesis for the weekly review. (Table scrolls sideways on narrow screens.)</p>
+
+          <div class="rubric-wrap">
+            <table class="rubric">
+              <caption>Capstone self-assessment · criteria × levels</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Criterion</th>
+                  <th scope="col">Emerging</th>
+                  <th scope="col">Developing</th>
+                  <th scope="col" class="lvl-hero">Hero</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Relaxation &amp; threshold</th>
+                  <td>Often fall fully asleep, or can't settle the body.</td>
+                  <td>Reach deep relaxation most sessions; touch the threshold sometimes.</td>
+                  <td class="lvl-hero">Reach stillness on demand and recognize the <span class="term" data-term="hypnagogia">hypnagogic</span> threshold almost every session.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Vibrational state</th>
+                  <td>Rarely or never feel vibrations.</td>
+                  <td>Vibrations come sometimes but you can't steer them.</td>
+                  <td class="lvl-hero">Induce the <span class="term" data-term="vibrational state">vibrational state</span> on most attempts and move it head-to-toe at will.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Focus on the edge</th>
+                  <td>Mind races, or you tip straight into sleep.</td>
+                  <td>Hold the edge briefly before sleep or excitement breaks it.</td>
+                  <td class="lvl-hero">Hold <span class="term" data-term="focus 10">Focus 10</span> calm-but-alert for sustained stretches, noticing without grabbing.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Exit / separation</th>
+                  <td>No separation yet; techniques feel mechanical.</td>
+                  <td>Partial or fleeting separation, or a stabilized <span class="term" data-term="lucid dream">lucid dream</span>.</td>
+                  <td class="lvl-hero">At least one clear separation (or stabilized lucid dream); switch techniques calmly when one doesn't take.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Fear &amp; sleep paralysis</th>
+                  <td>Fear aborts sessions; paralysis triggers panic.</td>
+                  <td>Manage fear with effort; paralysis still rattles you.</td>
+                  <td class="lvl-hero">Meet <span class="term" data-term="sleep paralysis">sleep paralysis</span> and fear with settled curiosity — "this is expected, it passes."</td>
+                </tr>
+                <tr>
+                  <th scope="row">Navigation &amp; intention</th>
+                  <td>No navigation; or drift with no orientation.</td>
+                  <td>Move a little; intention slips or environment dissolves fast.</td>
+                  <td class="lvl-hero">Move toward a set intention and hold orientation/environment; run the lucid-dream equivalent when needed.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Return &amp; grounding</th>
+                  <td>Get yanked back; skip grounding; feel foggy after.</td>
+                  <td>Return mostly cleanly; ground inconsistently.</td>
+                  <td class="lvl-hero">Return deliberately and <span class="term" data-term="grounding">ground</span> fully <em>every</em> time, re-entering ordinary awareness cleanly.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Journal &amp; diagnosis</th>
+                  <td>Sporadic or skipped entries; no pattern-finding.</td>
+                  <td>Most sessions logged; occasional weekly review.</td>
+                  <td class="lvl-hero">Every session logged; weekly one-change reviews; a clear final self-diagnosis driving improvement.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Honesty of framing</th>
+                  <td>Blur experiential, evidenced, and interpretive claims.</td>
+                  <td>Mostly keep them apart; slip under excitement.</td>
+                  <td class="lvl-hero">Hold <span class="tag tag-experiential">experiential</span>, <span class="tag tag-evidenced">evidenced</span>, and <span class="tag tag-interpretive">interpretive</span> rigorously apart, with healthy expectations.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Sustainability</th>
+                  <td>Practice erodes sleep/mood, or fizzles out.</td>
+                  <td>Keep ~4–5/week with some sleep cost or missed weeks.</td>
+                  <td class="lvl-hero">Hold the schedule for four weeks while protecting sleep, scaling back when your body asks.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="lenses">
+            <div class="lens lens-tradition">
+              <h4>★ The tradition holds</h4>
+              <p class="muted" style="margin:0">A month of disciplined practice "thins the veil": the exits come easier, the <span class="term" data-term="silver cord">silver cord</span> reassures, and the practitioner learns to navigate the planes with intention. Mastery is measured by the clarity and control of the journeys.</p>
+            </div>
+            <div class="lens lens-grounded">
+              <h4>◎ The grounded view</h4>
+              <p class="muted" style="margin:0">A month of consistent practice trains real, reportable skills: relaxation, attention on the sleep threshold, and calm in <span class="term" data-term="rem atonia">REM atonia</span>. Whatever the mechanism — likely shifts in <span class="term" data-term="tpj">multisensory body-modeling</span> — you <span class="tag tag-evidenced">demonstrably</span> get better at entering and steering these states. <span class="tag tag-interpretive">Whether anything "travels"</span> is not what's being graded.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ REFERENCE SOLUTION / EXEMPLAR ============ -->
+        <section id="exemplar" data-track-section="exemplar">
+          <p class="lesson-eyebrow">Reference solution</p>
+          <h2>An exemplar — a model week, then a self-diagnosis</h2>
+          <p>Here's what a strong filled-in week and an honest end-of-month self-diagnosis can look like. <strong>Don't open this until you've drafted your own first week's entries</strong> — it's a model to compare against, not a script to copy. Your practice is yours; this just shows the <em>shape</em> of good work.</p>
+
+          <details class="solution">
+            <summary>Reveal the exemplar — a model Week 3 journal + worked self-diagnosis</summary>
+            <div class="solution-body">
+              <h3>Model journal — Week 3 (Exit &amp; stabilize)</h3>
+
+              <div class="journal-entry">
+                <p class="je-meta">Tue · WBTB, woke 4:50, up 15 min, back to bed 5:05 · technique: relax→threshold→vibrations→rope</p>
+                <p style="margin:.3rem 0 0">Settled in ~6 min. Threshold clear, lots of drifting faces. Vibrations came strong at the chest — pushed them to the feet, got a half-wave. Tried the <span class="term" data-term="rope technique">rope</span>; felt a strong "peeling" at the shoulders but got excited and it collapsed. No exit. <strong>Worked:</strong> WBTB timing, vibrations on demand. <strong>Adjust:</strong> the excitement spike is my exit-killer — next time, greet the peeling with a long out-breath instead of leaning in.</p>
+              </div>
+
+              <div class="journal-entry">
+                <p class="je-meta">Thu · WBTB, woke 5:10, back to bed 5:25 · technique: relax→threshold→vibrations→roll-out</p>
+                <p style="margin:.3rem 0 0">Vibrations milder. Switched from rope to <strong>roll-out</strong> and felt myself tip sideways "out" — first clear separation. Lasted ~10 seconds: looked at my hands (blurry, two thumbs), grabbed the bedframe to stabilize. Then snapped back. No fear, just surprise. <span class="tag tag-experiential">Felt unmistakably like leaving</span>; <span class="tag tag-evidenced">grounded view: a vivid shift in body-modeling</span>. <strong>Worked:</strong> switching technique calmly; hands-look stabilizer. <strong>Adjust:</strong> stabilize <em>faster</em> — engage touch in the first second, not the third.</p>
+              </div>
+
+              <div class="journal-entry">
+                <p class="je-meta">Sat · no-WBTB short sitting, 11pm · technique: relax→threshold only</p>
+                <p style="margin:.3rem 0 0"><span class="term" data-term="sleep paralysis">Sleep paralysis</span> arrived unbidden near the threshold — chest pressure, a sensed "presence" by the door. Old me would've panicked; instead I told myself "expected, harmless, it passes," kept breathing slow, and it dissolved in maybe 20 seconds. Didn't push for exit — too tired. <strong>Worked:</strong> the settled response; it genuinely passed. <strong>Adjust:</strong> nothing — this was a win. Grounded with water and a short walk anyway.</p>
+              </div>
+
+              <div class="journal-entry">
+                <p class="je-meta">Sun · WBTB, woke 5:00, back to bed 5:18 · technique: full sequence</p>
+                <p style="margin:.3rem 0 0">Didn't reach exit — fell asleep at the vibrational stage twice. Landed instead in a <span class="term" data-term="lucid dream">lucid dream</span>: did a <span class="term" data-term="reality check">reality check</span> (nose-pinch, could breathe), stabilized by rubbing my hands, and explored a hallway with intention. Counted this as Week-3 navigation practice. <strong>Worked:</strong> the lucid path as a real fallback. <strong>Adjust:</strong> on tired WBTB nights I sleep through vibrations — try a slightly earlier wake so I'm less sleep-pressured.</p>
+              </div>
+
+              <h3 style="margin-top:1.6rem">Worked self-diagnosis (end of month)</h3>
+              <p><strong>Pattern from the journal:</strong> across four weeks, my two recurring failure modes are (1) <em>excitement spikes</em> collapsing the state right at separation, and (2) <em>falling fully asleep</em> at the vibrational stage on over-tired WBTB nights.</p>
+              <p><strong>One change I tested (Module 09 loop):</strong> I moved my WBTB wake 25 minutes earlier (less sleep pressure) <em>and</em> rehearsed greeting any "peeling/lifting" sensation with a long, bored out-breath. I changed only these and tracked the next week.</p>
+              <p><strong>Result:</strong> sleeping-through dropped from ~half my WBTB sessions to one; I had two clean roll-out exits where the calm-breath stopped the excitement collapse. The single most useful adjustment was <strong>the bored out-breath at separation</strong> — it turned the moment of "it's happening!" from an off-switch into a doorway.</p>
+              <p style="margin-bottom:0"><strong>Honest framing:</strong> I keep the categories apart — the exits <span class="tag tag-experiential">felt like leaving my body</span> (experiential), the skill of entering these states <span class="tag tag-evidenced">measurably improved</span> (evidenced), and I make <span class="tag tag-interpretive">no claim I went anywhere verifiable</span> (interpretive). Expectations stayed healthy; sleep stayed protected.</p>
+            </div>
+          </details>
+
+          <div class="callout callout-mistakes">
+            <p class="callout-title">⚠ Common mistakes in the capstone</p>
+            <ul>
+              <li><strong>Chasing the OBE and skipping the journal.</strong> The journal <em>is</em> the deliverable — the entries are what let you self-diagnose. "Nothing happened" sessions are data, not failures.</li>
+              <li><strong>Trading sleep for sessions.</strong> Stacking WBTB nights or restricting sleep to force results backfires and breaks the protector clause. Space them out.</li>
+              <li><strong>Forcing the exit.</strong> Straining or leaning in with excitement ends the state. Calm, almost-bored attention is the skill.</li>
+              <li><strong>Treating a lucid dream as "not counting."</strong> It's the legitimate grounded equivalent — run the same skills and grade it on the same rubric.</li>
+              <li><strong>Skipping grounding when you're tired.</strong> Ground every time regardless. Lingering dissociation is exactly what grounding prevents.</li>
+            </ul>
+          </div>
+
+          <!-- Optional structured practice you can run right now, with progressive hints -->
+          <div class="exercise" data-hints>
+            <div class="exercise-head"><span class="exercise-no">Exercise</span><span class="exercise-diff">Capstone warm-up</span></div>
+            <p class="exercise-q">Before day one, design <em>your</em> first week: pick your 4–5 session slots across the seven days, mark which are WBTB, and write your single Week-1 goal. What's the one rule that protects you?</p>
+            <div class="hint-step" data-step="hint">Start from your real sleep schedule. Which 1–2 mornings can you afford to wake at ~4–6 hours and sleep in afterward? Those are your WBTB candidates.</div>
+            <div class="hint-step" data-step="hint">Keep the other 2–3 sessions short (relaxation/threshold only, steps 1–4) so they don't cost sleep. Spread WBTB nights apart — never back to back.</div>
+            <div class="hint-step" data-step="solution">A workable Week 1: <strong>Mon</strong> short threshold sitting (11pm); <strong>Wed</strong> WBTB (wake ~5am, back to bed); <strong>Thu</strong> short relaxation sitting; <strong>Sat</strong> WBTB (sleep in Sunday); <strong>Sun</strong> short body-scan sitting. <strong>Week-1 goal:</strong> reach deep relaxation on demand and recognize the threshold most sittings — <em>no exit attempts</em>. <strong>The protecting rule:</strong> if I lose sleep or my mood drops, I cut a session, not my sleep. <em>Why:</em> Week 1 is the platform; rushing to exits before relaxation and threshold are reliable is the single most common reason the month stalls — and the protector clause is what keeps a 30-day practice from collapsing into burnout.</div>
+          </div>
+        </section>
+
+        <!-- ============ CONFIDENCE + MARK COMPLETE + NOTES ============ -->
+        <div class="confidence" data-confidence><span class="c-label">How solid do you feel?</span></div>
+
+        <div class="mark-complete" data-mark-complete>
+          <span class="mc-label" data-mc-text>Not yet complete</span>
+          <button class="btn btn-ghost">Mark capstone complete</button>
+        </div>
+
+        <div class="notes-box" data-notes="capstone">
+          <label>Your capstone journal &amp; final self-diagnosis</label>
+          <textarea placeholder="Your schedule for the month; week-by-week milestones hit; your clearest exit or lucid dream; how you met fear or sleep paralysis; and your final self-diagnosis — failure modes + the one change that helped most…"></textarea>
+        </div>
+
+        <!-- ============ YOU CAN NOW ============ -->
+        <div class="callout callout-note">
+          <p class="callout-title">✦ You can now</p>
+          <ul>
+            <li><strong>Run a full projection session unaided</strong> — sit down or wake for WBTB and move through relax → threshold → vibrational → focus → exit → stabilize → navigate (or the lucid-dream equivalent) → return → ground, with no guide.</li>
+            <li><strong>Sustain a healthy practice</strong> — hold ~4–5 sessions/week for a month while protecting your sleep, and scale back when your body asks.</li>
+            <li><strong>Meet fear and sleep paralysis without distress</strong>, and <strong>return and ground cleanly every time</strong>.</li>
+            <li><strong>Use your journal as a feedback loop</strong> — weekly one-change reviews and a final self-diagnosis you act on.</li>
+            <li><strong>Explain the tradition and the science</strong> — Monroe/Buhlman/Bruce, Focus levels, the silver cord; the TPJ and multisensory integration, REM atonia, hypnagogia, lucid dreaming — keeping experiential, evidenced, and interpretive claims apart, with realistic expectations.</li>
+            <li><strong>Claim your certificate.</strong> Marking the capstone complete (with every module finished) unlocks the course <a href="reference.html">certificate</a>. That's the whole hero bar — go keep the practice.</li>
+          </ul>
+        </div>
+
+        <!-- ============ MODULE NAV ============ -->
+        <nav class="module-nav">
+          <a class="prev" href="10-advanced-practice-tradition-and-science.html"><span class="dir">← Previous</span><span class="ttl">Advanced Practice, Tradition &amp; Science</span></a>
+          <a class="next" href="reference.html"><span class="dir">Next →</span><span class="ttl">Reference &amp; Flashcards</span></a>
+        </nav>
+
+      </article>
+
+      <nav class="toc" data-toc><h4>On this page</h4><div data-toc-list></div></nav>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p class="mono" style="letter-spacing:.14em;text-transform:uppercase;font-size:.7rem">Astral Projection · Zero → Hero</p>
+    <p class="foot-disc">This course teaches astral projection / out-of-body experience as a practice of attention and sleep states. It is not medical or psychological treatment and makes no claims that you travel to real, externally verifiable places. Practitioner reports are treated as experiential; the science is presented as evidenced; metaphysical framing is presented as interpretive — and these are never blurred. If intensive practice causes persistent distress, stop and seek support.</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
