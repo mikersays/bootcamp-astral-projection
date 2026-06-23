@@ -233,8 +233,8 @@
   function initNavSheet() {
     var sheet = $('.navsheet'); if (!sheet) return;
     var openers = $all('[data-nav-open]'), scrim = sheet.querySelector('.navsheet__scrim');
-    function open() { sheet.setAttribute('data-open', ''); document.body.style.overflow = 'hidden'; }
-    function close() { sheet.removeAttribute('data-open'); document.body.style.overflow = ''; }
+    function open() { sheet.setAttribute('data-open', ''); sheet.removeAttribute('aria-hidden'); openers.forEach(function(o){o.setAttribute('aria-expanded','true')}); document.documentElement.style.overflowY = 'clip'; }
+    function close() { sheet.removeAttribute('data-open'); sheet.setAttribute('aria-hidden','true'); openers.forEach(function(o){o.setAttribute('aria-expanded','false')}); document.documentElement.style.overflowY = ''; }
     openers.forEach(function (o) { if (!o.__w) { o.__w = 1; o.addEventListener('click', open); } });
     if (scrim && !scrim.__w) { scrim.__w = 1; scrim.addEventListener('click', close); }
     $all('[data-nav-close]', sheet).forEach(function (c) { if (!c.__w) { c.__w = 1; c.addEventListener('click', close); } });
@@ -267,6 +267,7 @@
       if (box.hasAttribute('data-open') && e.key === 'Enter') { var s = results.querySelector('a.sel') || results.querySelector('a'); if (s) location.href = s.href; }
     });
     $all('[data-search-open]').forEach(function (b) { if (!b.__w) { b.__w = 1; b.addEventListener('click', open); } });
+    $all('[data-search-close]').forEach(function (b) { if (!b.__w) { b.__w = 1; b.addEventListener('click', close); } });
   }
 
   /* ======================================================================= */
@@ -355,7 +356,11 @@
         var qt = q.querySelector('.q-text'); if (qt && !qt.querySelector('.qn')) qt.insertBefore(el('span', 'qn', 'Q' + (qi + 1)), qt.firstChild);
         var type = q.getAttribute('data-type') || 'mcq';
         if (type === 'order') { wireOrder(q); return; }
-        if (type === 'fill' || type === 'predict-text') { return; }
+        if (type === 'fill' || type === 'predict-text') {
+          var inp = q.querySelector('.fill-input');
+          if (inp) { var qtEl = q.querySelector('.q-text'); inp.setAttribute('aria-label', qtEl ? qtEl.textContent.trim() : 'Your answer'); }
+          return;
+        }
         // option-based
         var opts = $all('.option', q);
         opts.forEach(function (o, oi) {
@@ -590,7 +595,9 @@
       var earned = Store.earned();
       Object.keys(BADGES).forEach(function (k) {
         var b = BADGES[k]; var got = !!earned[k];
-        grid.appendChild(el('div', 'badge' + (got ? ' earned' : ''), '<div class="bico">' + b.ico + '</div><div class="bname">' + b.name + '</div>'));
+        var badgeEl = el('div', 'badge' + (got ? ' earned' : ''), '<div class="bico">' + b.ico + '</div><div class="bname">' + b.name + '</div>');
+        badgeEl.setAttribute('role', 'listitem');
+        grid.appendChild(badgeEl);
       });
     });
   }

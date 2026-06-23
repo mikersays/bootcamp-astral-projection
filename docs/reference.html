@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <style>
     /* Reference-page-scoped additive styles (CSS vars only; mobile-first, no fixed widths) */
     .ref-table{width:100%;border-collapse:collapse;margin:1.1rem 0;font-size:.94rem}
@@ -37,7 +38,7 @@
     .glossary-dl dt .pron{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.1em;color:var(--text-faint);text-transform:uppercase;margin-left:.5rem}
     .glossary-dl dd{margin:0 0 .4rem;color:var(--text-soft);line-height:1.6;border-left:2px solid var(--border);padding-left:.9rem}
     .gloss-jump{display:flex;flex-wrap:wrap;gap:.35rem;margin:1rem 0 0;list-style:none;padding:0}
-    .gloss-jump a{font-family:var(--font-mono);font-size:.72rem;width:30px;height:30px;display:grid;place-items:center;border:1px solid var(--border);border-radius:8px;color:var(--text-faint);text-decoration:none;text-transform:uppercase}
+    .gloss-jump a{font-family:var(--font-mono);font-size:.72rem;min-width:44px;min-height:44px;padding:.2rem;display:grid;place-items:center;border:1px solid var(--border);border-radius:8px;color:var(--text-faint);text-decoration:none;text-transform:uppercase}
     .gloss-jump a:hover{color:var(--accent);border-color:var(--accent)}
     .cert-actions{display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center;margin-top:1.4rem}
     .cert-lock-note{display:block;font-family:var(--font-mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-faint);margin-top:1.2rem}
@@ -282,7 +283,7 @@
           <h2>Spaced-repetition flashcards</h2>
           <p class="muted">Tap a card to flip it; use the arrows to move through the deck. Quiz yourself until the term brings the meaning without effort — that's when it's yours.</p>
 
-          <div class="flashdeck" data-flashdeck>
+          <div class="flashdeck" data-flashdeck aria-label="Spaced-repetition flashcards">
             <div class="flashcard"><div class="flashcard__inner">
               <div class="flashcard__face flashcard__front"><span class="term-word">Hypnagogia</span></div>
               <div class="flashcard__face flashcard__back"><span class="def">The borderland state at sleep onset — drifting imagery, sounds, and thoughts. The launch-pad for most projection attempts.</span></div>
@@ -357,7 +358,7 @@
           <p class="lesson-eyebrow">Section 4</p>
           <h2>Achievements</h2>
           <p class="muted">Badges light up as you finish checkpoints and modules. They save to this device — no account, nothing leaves your browser.</p>
-          <div class="badge-grid" data-badge-grid></div>
+          <div class="badge-grid" data-badge-grid role="list" aria-label="Course badges"></div>
         </section>
 
         <!-- ============================================================= -->
@@ -377,7 +378,7 @@
               <button class="btn btn-ghost" type="button" data-cert-edit>Set your name</button>
               <button class="btn btn-cyan" type="button" data-cert-print>Print / save certificate</button>
             </div>
-            <span class="cert-lock-note" data-cert-lock>🔒 Complete all modules and the capstone to unlock</span>
+            <span class="cert-lock-note" data-cert-lock><span aria-hidden="true">🔒</span> Complete all modules and the capstone to unlock</span>
           </div>
         </section>
 
@@ -429,14 +430,14 @@
           </div>
         </section>
 
-        <nav class="module-nav">
+        <nav class="module-nav" aria-label="Module navigation">
           <a class="prev" href="capstone.html"><span class="dir">← Previous</span><span class="ttl">Capstone: The 30-Day Practice</span></a>
           <a class="next" href="index.html"><span class="dir">Next →</span><span class="ttl">Course home</span></a>
         </nav>
 
       </article>
 
-      <nav class="toc" data-toc><h4>On this page</h4><div data-toc-list></div></nav>
+      <nav class="toc" data-toc aria-label="On this page"><h4>On this page</h4><div data-toc-list></div></nav>
     </div>
   </main>
 
