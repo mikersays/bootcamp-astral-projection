@@ -35,9 +35,11 @@ _course/                  # source of truth, NOT deployed
 
 ## CSS/JS gotchas (learned the hard way in QA — don't regress these)
 - **`html { overflow-x: clip }`** is what prevents horizontal scroll from the off-canvas nav drawer. Do **not** put `overflow-x:hidden` on `body` — it turns `body` into a scroll container and **breaks `position:sticky`** (the desktop TOC rail and the header). This combination was the bug.
+- **The nav-drawer JS open/close must use `document.documentElement.style.overflowY`**, not `document.body.style.overflow`. Setting overflow on body triggers the same scroll-container bug as above and breaks sticky. Already fixed in `main.js`; don't revert.
 - **`.objectives li` uses an absolutely-positioned `::before` bullet, not `display:flex`.** Flex on a list item containing inline elements (`.term`, `<em>`, `<strong>`) shatters the text into one-word columns. Same caution applies anywhere you'd flex a container of rich inline text.
 - **The session player container gets its `.session-player` class added by JS** (`buildSessionPlayer`), not in the markup — that's what applies the card styling + "Guided session" ribbon. The hero instance is deliberately borderless via `.orb-wrap .session-player` overrides.
-- Wide tables must sit inside an internal-scroll wrapper (`.table-wrap` / `overflow-x:auto`) so they scroll internally instead of widening the page.
+- **Wide tables must sit inside `.table-wrap`** — this is a **global CSS utility class** in `main.css` (no per-page `<style>` block needed). Just wrap: `<div class="table-wrap"><table>…</table></div>`. Pages that predate this (05, 09, capstone, reference) have their own local `<style>` blocks — that's fine but `.table-wrap` is preferred going forward.
+- **Favicon lives at `docs/favicon.svg`** (the moon SVG). Reference it as `href="favicon.svg"` — **not** `href="assets/favicon.svg"` (wrong subdirectory). All 14 pages already have the correct link.
 - Header is tight on phones: mini-progress is hidden `<560px` and the brand tagline `<420px` so the menu button never clips. Keep header content minimal.
 
 ## QA
