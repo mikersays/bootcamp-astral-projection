@@ -527,6 +527,9 @@ figcaption{font-family:var(--font-mono);font-size:.72rem;color:var(--text-faint)
   font-family:var(--font-mono);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-faint)}
 .orb-wrap .session-player{background:none;border:none;box-shadow:none;padding:0}
 .orb-wrap .session-player::before{content:none}
+.orb-wrap .sp-phase,.orb-wrap .sp-descent,.orb-wrap .sp-controls,
+.orb-wrap .sp-presets,.orb-wrap .sp-sound{display:none}
+.orb-wrap .sp-stage{padding:0}
 .sp-stage{display:grid;place-items:center;padding:2.4rem 0 1.2rem}
 .sp-orb{position:relative;width:min(220px,60vw);aspect-ratio:1;display:grid;place-items:center}
 .sp-orb__halo{position:absolute;inset:0;border-radius:50%;
