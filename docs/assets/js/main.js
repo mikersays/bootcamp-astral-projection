@@ -747,6 +747,335 @@
     buildDescent(); buildPresets(); loadPhase(true);
   }
 
+  /* ======================================================================= */
+  /* BINAURAL BEAT GENERATOR                                                 */
+  /* ======================================================================= */
+  function initBinauralBeat() {
+    $all('[data-binaural-beat]').forEach(function (card) {
+      if (card.__bb) return; card.__bb = 1;
+      buildBinauralBeat(card);
+    });
+  }
+
+  function buildBinauralBeat(card) {
+    var playBtn   = $('.bb-play', card);
+    var playLbl   = $('.bb-play-label', card);
+    var carrierEl = document.getElementById('bbCarrier');
+    var beatEl    = document.getElementById('bbBeat');
+    var volEl     = document.getElementById('bbVol');
+    var timerEl   = document.getElementById('bbTimer');
+    var carrierV  = document.getElementById('bbCarrierVal');
+    var beatV     = document.getElementById('bbBeatVal');
+    var volV      = document.getElementById('bbVolVal');
+    var bandName  = $('.bb-band-name', card);
+    var bandNote  = $('.bb-band-note', card);
+    var statusEl  = $('.bb-status', card);
+    var presets   = $all('.bb-preset', card);
+
+    if (!playBtn || !carrierEl || !beatEl) return;
+
+    var RAMP = 0.04, FADE = 1.2;
+    var ctx = null, oscL = null, oscR = null, gL = null, gR = null,
+        panL = null, panR = null, master = null;
+    var playing = false, timerId = null;
+
+    function carrier()    { return parseFloat(carrierEl.value); }
+    function beat()       { return parseFloat(beatEl.value); }
+    function vol()        { return parseInt(volEl.value, 10) / 100; }
+    function masterGain() { return vol() * 0.5; }
+
+    function bandFor(b) {
+      if (b < 4)  return ['Delta', 'deep sleep'];
+      if (b < 8)  return ['Theta', 'projection target'];
+      if (b < 13) return ['Alpha', 'relaxed'];
+      if (b < 30) return ['Beta', 'alert'];
+      return ['Gamma', 'high focus'];
+    }
+    function fmtBeat(b) { return (Math.round(b * 10) / 10).toFixed(1); }
+
+    function updateReadouts() {
+      if (carrierV) carrierV.innerHTML = Math.round(carrier()) + '&nbsp;Hz';
+      if (beatV)    beatV.innerHTML    = fmtBeat(beat()) + '&nbsp;Hz';
+      if (volV)     volV.textContent   = volEl.value + '%';
+      var band = bandFor(beat());
+      if (bandName) bandName.textContent = band[0];
+      if (bandNote) bandNote.textContent = band[1];
+      var raw = beat() > 0 ? (1 / beat()) : 1;
+      card.style.setProperty('--bb-period', Math.max(raw, 0.5).toFixed(3) + 's');
+    }
+
+    function syncPreset() {
+      var c = carrier(), b = beat();
+      presets.forEach(function (p) {
+        var match = Math.abs(parseFloat(p.dataset.beat) - b) < 1e-6 &&
+                    Math.abs(parseInt(p.dataset.carrier, 10) - c) < 0.5;
+        p.setAttribute('aria-pressed', match ? 'true' : 'false');
+      });
+    }
+
+    function announce() {
+      if (!statusEl) return;
+      statusEl.textContent = playing
+        ? 'Playing. ' + bandFor(beat())[0] + ' band, ' + fmtBeat(beat()) + ' Hz beat on a ' + Math.round(carrier()) + ' Hz carrier.'
+        : 'Stopped.';
+    }
+
+    function applyFrequencies() {
+      if (!ctx || !oscL) return;
+      var now = ctx.currentTime, half = beat() / 2;
+      oscL.frequency.setTargetAtTime(carrier() - half, now, RAMP);
+      oscR.frequency.setTargetAtTime(carrier() + half, now, RAMP);
+    }
+
+    function applyVolume() {
+      if (!ctx || !master) return;
+      master.gain.setTargetAtTime(masterGain(), ctx.currentTime, RAMP);
+    }
+
+    function ensureCtx() {
+      if (!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)();
+      return ctx;
+    }
+
+    function buildVoices() {
+      master = ctx.createGain(); master.gain.value = 0.0001; master.connect(ctx.destination);
+      var half = beat() / 2;
+      oscL = ctx.createOscillator(); oscL.type = 'sine'; oscL.frequency.value = carrier() - half;
+      oscR = ctx.createOscillator(); oscR.type = 'sine'; oscR.frequency.value = carrier() + half;
+      gL = ctx.createGain(); gR = ctx.createGain(); gL.gain.value = 0.5; gR.gain.value = 0.5;
+      panL = ctx.createStereoPanner(); panL.pan.value = -1;
+      panR = ctx.createStereoPanner(); panR.pan.value =  1;
+      oscL.connect(gL).connect(panL).connect(master);
+      oscR.connect(gR).connect(panR).connect(master);
+    }
+
+    function cancelHold(param, t) {
+      if (typeof param.cancelAndHoldAtTime === 'function') param.cancelAndHoldAtTime(t);
+      else param.cancelScheduledValues(t);
+    }
+
+    function teardownVoices(faded) {
+      if (!master) return;
+      var c = ctx, oL = oscL, oR = oscR, a = gL, b = gR, pa = panL, pb = panR, m = master;
+      oscL = oscR = gL = gR = panL = panR = master = null;
+      var fadeDur = faded ? FADE : RAMP * 5;
+      var t = c.currentTime, end = t + fadeDur;
+      cancelHold(m.gain, t);
+      m.gain.setValueAtTime(Math.max(m.gain.value, 0.0001), t);
+      m.gain.linearRampToValueAtTime(0.0001, end);
+      try { oL.stop(end + 0.05); oR.stop(end + 0.05); } catch (e) {}
+      var done = false;
+      var finish = function () {
+        if (done) return; done = true;
+        try { oL.disconnect(); oR.disconnect(); a.disconnect(); b.disconnect(); pa.disconnect(); pb.disconnect(); m.disconnect(); } catch (e) {}
+      };
+      oL.onended = finish;
+      setTimeout(finish, (fadeDur + 0.3) * 1000);
+    }
+
+    function setPlayUI(on) {
+      playing = on; card.classList.toggle('is-playing', on);
+      playBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      if (playLbl) playLbl.textContent = on ? 'Stop' : 'Play';
+    }
+
+    function clearTimer() { if (timerId) { clearTimeout(timerId); timerId = null; } }
+    function setTimer() {
+      clearTimer();
+      var mins = timerEl ? parseInt(timerEl.value, 10) : 0;
+      if (mins > 0 && playing) timerId = setTimeout(function () { if (playing) stopBB(true); }, mins * 60 * 1000);
+    }
+
+    function startBB() {
+      if (playing) return;
+      var c;
+      try { c = ensureCtx(); buildVoices(); } catch (e) {
+        teardownVoices(false);
+        if (statusEl) statusEl.textContent = 'Audio could not start in this browser.';
+        return;
+      }
+      setPlayUI(true);
+      var go = function () {
+        if (!playing) return;
+        var t = ctx.currentTime;
+        cancelHold(master.gain, t);
+        master.gain.setValueAtTime(0.0001, t);
+        master.gain.setTargetAtTime(masterGain(), t, RAMP * 2);
+        try { oscL.start(); oscR.start(); } catch (e) {}
+        setTimer(); announce();
+      };
+      if (c.state === 'suspended') c.resume().then(go).catch(function () { teardownVoices(false); setPlayUI(false); });
+      else go();
+    }
+
+    function stopBB(faded) {
+      if (!playing) return;
+      setPlayUI(false); clearTimer(); teardownVoices(faded);
+      if (statusEl) statusEl.textContent = faded ? 'Session complete. Stopped.' : 'Stopped.';
+    }
+
+    playBtn.addEventListener('click', function () { playing ? stopBB(false) : startBB(); });
+    carrierEl.addEventListener('input', function () { updateReadouts(); syncPreset(); applyFrequencies(); if (playing) announce(); });
+    beatEl.addEventListener('input', function () { updateReadouts(); syncPreset(); applyFrequencies(); if (playing) announce(); });
+    if (volEl)   volEl.addEventListener('input',   function () { updateReadouts(); applyVolume(); });
+    if (timerEl) timerEl.addEventListener('change', setTimer);
+    presets.forEach(function (p) {
+      p.addEventListener('click', function () {
+        carrierEl.value = p.dataset.carrier;
+        beatEl.value    = p.dataset.beat;
+        updateReadouts(); syncPreset(); applyFrequencies();
+        if (playing) announce();
+      });
+    });
+    window.addEventListener('pagehide', function () {
+      if (playing) stopBB(false);
+      if (ctx && ctx.state !== 'closed') { ctx.close().catch(function () {}); ctx = null; }
+    });
+    updateReadouts(); syncPreset();
+  }
+
+  /* ======================================================================= */
+  /* BREATHING PACER                                                         */
+  /* ======================================================================= */
+  function initBreathingPacer() {
+    $all('[data-breathing-pacer]').forEach(function (root) {
+      if (root.__bp) return; root.__bp = 1;
+      buildBreathingPacer(root);
+    });
+  }
+
+  function buildBreathingPacer(root) {
+    var orb     = $('.bp-orb', root);
+    var countEl = $('.bp-count', root);
+    var phaseEl = $('.bp-phase', root);
+    var toggle  = $('.bp-toggle', root);
+    var status  = $('.bp-status', root);
+    var soundCb = $('.bp-sound-input', root);
+    var presets = $all('.bp-preset', root);
+
+    if (!orb || !toggle) return;
+
+    var reduceMQ = window.matchMedia('(prefers-reduced-motion: reduce)');
+    var PATTERNS = { coherent: [5.5, 0, 5.5, 0], box: [4, 4, 4, 4], '478': [4, 7, 8, 0] };
+    var current = 'coherent', running = false, phases = [], idx = 0,
+        timerId = null, tickId = null, remaining = 0, audioCtx = null;
+
+    function buildPhases(key) {
+      var p = PATTERNS[key] || PATTERNS.coherent, out = [];
+      out.push({ word: 'Inhale', dur: p[0], kind: 'grow' });
+      if (p[1] > 0) out.push({ word: 'Hold', dur: p[1], kind: 'hold' });
+      out.push({ word: 'Exhale', dur: p[2], kind: 'shrink' });
+      if (p[3] > 0) out.push({ word: 'Hold', dur: p[3], kind: 'hold' });
+      return out;
+    }
+
+    function clearTimers() {
+      if (timerId) { clearTimeout(timerId); timerId = null; }
+      if (tickId)  { clearInterval(tickId);  tickId = null; }
+    }
+
+    function setOrbState(kind) {
+      orb.classList.remove('is-grow', 'is-shrink', 'is-hold');
+      if (kind) orb.classList.add('is-' + kind);
+    }
+
+    function applyScale(phase) {
+      if (reduceMQ.matches || phase.kind === 'hold') return;
+      orb.style.transition = 'transform ' + phase.dur + 's ease-in-out,border-color .6s ease,box-shadow .6s ease';
+      var target = phase.kind === 'grow' ? 1 : 0.62;
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { orb.style.transform = 'scale(' + target + ')'; });
+      });
+    }
+
+    function tone(kind) {
+      if (!soundCb || !soundCb.checked || !audioCtx) return;
+      try {
+        var now = audioCtx.currentTime, osc = audioCtx.createOscillator(), g = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(kind === 'grow' ? 528 : kind === 'shrink' ? 396 : 440, now);
+        g.gain.setValueAtTime(0.0001, now);
+        g.gain.exponentialRampToValueAtTime(0.06, now + 0.05);
+        g.gain.setTargetAtTime(0.0001, now + 0.12, 0.18);
+        osc.connect(g); g.connect(audioCtx.destination);
+        osc.start(now); osc.stop(now + 0.6);
+      } catch (e) {}
+    }
+
+    function startPhase(i) {
+      idx = i % phases.length;
+      var phase = phases[idx];
+      remaining = Math.ceil(phase.dur);
+      if (phaseEl) phaseEl.textContent = phase.word;
+      if (countEl) countEl.textContent = remaining;
+      setOrbState(phase.kind); applyScale(phase);
+      if (status) status.textContent = phase.word;
+      tone(phase.kind);
+      tickId = setInterval(function () {
+        remaining -= 1;
+        if (countEl) countEl.textContent = remaining > 0 ? remaining : '';
+      }, 1000);
+      timerId = setTimeout(function () { clearInterval(tickId); tickId = null; startPhase(idx + 1); }, phase.dur * 1000);
+    }
+
+    function ensureAudio() {
+      if (!soundCb || !soundCb.checked) return;
+      try {
+        var AC = window.AudioContext || window.webkitAudioContext;
+        if (!AC) return;
+        if (!audioCtx) audioCtx = new AC();
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+      } catch (e) { audioCtx = null; }
+    }
+
+    function startBP() {
+      if (running) return;
+      running = true; ensureAudio();
+      phases = buildPhases(current);
+      toggle.textContent = 'Stop'; toggle.setAttribute('aria-pressed', 'true');
+      clearTimers(); startPhase(0);
+    }
+
+    function stopBP() {
+      if (!running) return;
+      running = false; clearTimers();
+      toggle.textContent = 'Begin'; toggle.setAttribute('aria-pressed', 'false');
+      if (phaseEl) phaseEl.textContent = 'Ready';
+      if (countEl) countEl.textContent = '';
+      setOrbState(null);
+      if (!reduceMQ.matches) {
+        orb.style.transition = 'transform 1s ease-in-out,border-color .6s ease,box-shadow .6s ease';
+        orb.style.transform = 'scale(0.62)';
+      }
+      if (status) status.textContent = 'Stopped.';
+    }
+
+    toggle.addEventListener('click', function () { if (running) stopBP(); else startBP(); });
+    presets.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        current = btn.getAttribute('data-pattern');
+        presets.forEach(function (b) {
+          var on = b === btn; b.classList.toggle('is-active', on); b.setAttribute('aria-pressed', on ? 'true' : 'false');
+        });
+        if (running) { stopBP(); startBP(); }
+        else if (status) status.textContent = 'Pattern: ' + (btn.getAttribute('data-label') || '');
+      });
+    });
+
+    var onReduceChange = function () {
+      if (reduceMQ.matches) { orb.style.transform = ''; }
+      else if (running && phases.length) { applyScale(phases[idx]); }
+      else { orb.style.transition = 'transform 1s ease-in-out,border-color .6s ease,box-shadow .6s ease'; orb.style.transform = 'scale(0.62)'; }
+    };
+    if (reduceMQ.addEventListener) reduceMQ.addEventListener('change', onReduceChange);
+    else if (reduceMQ.addListener) reduceMQ.addListener(onReduceChange);
+
+    window.addEventListener('pagehide', function () {
+      if (running) stopBP();
+      if (audioCtx && audioCtx.state !== 'closed') { audioCtx.close().catch(function () {}); audioCtx = null; }
+    });
+  }
+
   function icon(name) {
     var p = {
       play: '<path d="M5 3.5v17l14-8.5z"/>',
@@ -764,7 +1093,7 @@
     initTheme(); initNavSheet(); initSearch(); initProgress(); initTOC();
     initCopy(); initExercises(); initQuizzes(); initGlossary();
     initFlashcards(); initNotes(); initConfidence(); renderBadges(); initCertificate();
-    initSessionPlayers();
+    initSessionPlayers(); initBinauralBeat(); initBreathingPacer();
   }
 
   window.AP = { init: init, Store: Store, manifest: MANIFEST, glossary: GLOSSARY, sessions: SESSIONS, toast: toast, award: award };

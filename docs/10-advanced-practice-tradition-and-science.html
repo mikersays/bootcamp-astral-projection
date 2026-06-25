@@ -8,7 +8,38 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="assets/css/main.css">
-  <style>.content .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1.3rem 0;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-raised)}.content .table-wrap table{border-collapse:collapse;width:100%;min-width:32rem;font-size:.95rem}.content .table-wrap th,.content .table-wrap td{text-align:left;vertical-align:top;padding:.7rem .85rem;border-bottom:1px solid var(--border)}.content .table-wrap thead th{font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.08em;font-size:.68rem;color:var(--text-soft);background:var(--surface-2)}.content .table-wrap tbody tr:last-child td{border-bottom:none}.content .table-wrap tbody tr:nth-child(odd) td{background:color-mix(in srgb,var(--surface) 45%,transparent)}</style>
+  <style>.content .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1.3rem 0;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg-raised)}.content .table-wrap table{border-collapse:collapse;width:100%;min-width:32rem;font-size:.95rem}.content .table-wrap th,.content .table-wrap td{text-align:left;vertical-align:top;padding:.7rem .85rem;border-bottom:1px solid var(--border)}.content .table-wrap thead th{font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.08em;font-size:.68rem;color:var(--text-soft);background:var(--surface-2)}.content .table-wrap tbody tr:last-child td{border-bottom:none}.content .table-wrap tbody tr:nth-child(odd) td{background:color-mix(in srgb,var(--surface) 45%,transparent)}
+  /* === Binaural Beat Generator === */
+  .bb-headphones{display:flex;gap:12px;align-items:flex-start;background:color-mix(in srgb,var(--accent-2) 8%,transparent);border:1px solid color-mix(in srgb,var(--accent-2) 28%,transparent);border-radius:var(--radius-sm);padding:14px 16px;margin:0 0 18px;color:var(--text);font-size:.88rem;line-height:1.5}
+  .bb-headphones strong{color:var(--accent-2)}
+  .bb-hp-glyph{font-size:1.3rem;line-height:1;flex:0 0 auto}
+  .bb-orb-wrap{display:flex;justify-content:center;align-items:center;height:96px;margin:4px 0}
+  .bb-orb{display:block;width:52px;height:52px;border-radius:50%;background:radial-gradient(circle at 50% 40%,var(--accent-strong),var(--accent) 55%,var(--accent-3) 120%);box-shadow:var(--glow-gold);opacity:.5;transition:opacity .4s ease;will-change:transform,opacity}
+  [data-binaural-beat].is-playing .bb-orb{opacity:1;animation:bbPulse var(--bb-period,1s) ease-in-out infinite}
+  @keyframes bbPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+  .bb-transport{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:8px 0 18px}
+  .bb-play{min-height:44px;min-width:90px;display:inline-flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;border:1px solid var(--border);font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;padding:9px 20px;border-radius:40px;background:var(--surface);color:var(--text);transition:.2s}
+  .bb-play:hover{border-color:var(--accent);color:var(--accent)}
+  [data-binaural-beat].is-playing .bb-play{background:linear-gradient(180deg,var(--accent-2-strong),var(--accent-2));color:#04201c;border-color:transparent;box-shadow:var(--glow-cyan)}
+  .bb-band-name{font-family:var(--font-mono);letter-spacing:.06em;text-transform:uppercase;font-size:.82rem;color:var(--accent-strong)}
+  .bb-band-note{font-size:.72rem;color:var(--text-soft)}
+  .bb-presets{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+  .bb-preset{flex:1 1 calc(20% - 8px);min-width:76px;min-height:44px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;font-family:var(--font-mono);letter-spacing:.03em;font-size:.68rem;text-transform:uppercase;color:var(--text-soft);background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:8px 6px;cursor:pointer;transition:.2s}
+  .bb-preset small{font-family:var(--font-body);letter-spacing:0;text-transform:none;font-size:.63rem;color:var(--text-faint)}
+  .bb-preset:hover{border-color:var(--accent);color:var(--accent)}
+  .bb-preset[aria-pressed="true"]{background:color-mix(in srgb,var(--accent) 14%,var(--surface));border-color:var(--accent);color:var(--accent-strong)}
+  .bb-sliders{display:grid;grid-template-columns:1fr 1fr;gap:14px 20px}
+  .bb-field{display:flex;flex-direction:column;gap:6px}
+  .bb-field label{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+  .bb-val{letter-spacing:0;text-transform:none;color:var(--text);font-size:.82rem;font-variant-numeric:tabular-nums}
+  .bb-field input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:5px;border-radius:6px;background:linear-gradient(90deg,var(--accent),var(--accent-3));outline-offset:4px;cursor:pointer}
+  .bb-field input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:20px;height:20px;border-radius:50%;background:var(--accent-strong);border:2px solid var(--bg);box-shadow:0 2px 8px rgba(0,0,0,.45);cursor:pointer}
+  .bb-field input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--accent-strong);border:2px solid var(--bg);box-shadow:0 2px 8px rgba(0,0,0,.45);cursor:pointer}
+  .bb-field select{font-family:var(--font-body);font-size:.88rem;color:var(--text);background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 12px;min-height:44px;cursor:pointer}
+  .bb-status{margin:16px 0 0;color:var(--text-soft);font-size:.82rem;font-style:italic;font-family:var(--font-body)}
+  @media(max-width:560px){.bb-sliders{grid-template-columns:1fr}.bb-preset{flex:1 1 calc(50% - 8px)}}
+  @media(prefers-reduced-motion:reduce){[data-binaural-beat].is-playing .bb-orb{animation:none;opacity:1}.bb-preset:hover{transform:none}}
+  </style>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
 <body data-module="10-advanced-practice-tradition-and-science">
@@ -217,6 +248,60 @@
           </div>
 
           <p><strong>Practical guidance.</strong> Treat entrainment audio as an <strong>optional aid</strong>, never a magic switch. If a track helps you settle, use it — it is harmless (keep the volume moderate to protect your hearing). If it pulls you toward sleep or distracts you, drop it. Your skills from 01–04 are the real engine; the audio is, at best, a tailwind. <strong>Do not build a practice that cannot function without a particular track</strong>, and don't let "I didn't have my audio" become the excuse that stalls you.</p>
+
+          <h3>Try it: Binaural Beat Generator</h3>
+          <p class="muted">The surest way to understand the effect is to hear it. Put on headphones, pick a brainwave band, and press Play — this is a live version of the phenomenon the lesson describes. <span class="tag tag-evidenced">evidenced</span> The perceptual illusion is real. <span class="tag tag-interpretive">not established</span> That it reliably entrains brain rhythms (see above).</p>
+
+          <div data-binaural-beat style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem 1.4rem;margin:.8rem 0 0">
+            <p class="bb-headphones" role="note">
+              <span class="bb-hp-glyph" aria-hidden="true">🎧</span>
+              <strong>Headphones required.</strong> The beat only exists when each ear receives its own separate tone. Speakers blend them in the air and the effect never forms. Start at a low volume.
+            </p>
+
+            <div class="bb-orb-wrap" aria-hidden="true"><span class="bb-orb"></span></div>
+
+            <div class="bb-transport">
+              <button type="button" class="bb-play" aria-pressed="false"><span class="bb-play-label">Play</span></button>
+              <div aria-hidden="true">
+                <div class="bb-band-name">Theta</div>
+                <div class="bb-band-note">projection target</div>
+              </div>
+            </div>
+
+            <div class="bb-presets" role="group" aria-label="Brainwave presets">
+              <button type="button" class="bb-preset" data-carrier="200" data-beat="2" aria-pressed="false">Delta 2 Hz<small>deep sleep</small></button>
+              <button type="button" class="bb-preset" data-carrier="200" data-beat="4" aria-pressed="true">Theta 4 Hz<small>projection target</small></button>
+              <button type="button" class="bb-preset" data-carrier="200" data-beat="6" aria-pressed="false">Theta 6 Hz<small>drifting</small></button>
+              <button type="button" class="bb-preset" data-carrier="200" data-beat="10" aria-pressed="false">Alpha 10 Hz<small>relaxed</small></button>
+              <button type="button" class="bb-preset" data-carrier="200" data-beat="18" aria-pressed="false">Beta 18 Hz<small>alert</small></button>
+            </div>
+
+            <div class="bb-sliders">
+              <div class="bb-field">
+                <label for="bbCarrier">Carrier freq <span class="bb-val" id="bbCarrierVal">200&nbsp;Hz</span></label>
+                <input type="range" id="bbCarrier" min="80" max="500" step="1" value="200">
+              </div>
+              <div class="bb-field">
+                <label for="bbBeat">Beat freq <span class="bb-val" id="bbBeatVal">4.0&nbsp;Hz</span></label>
+                <input type="range" id="bbBeat" min="0.5" max="30" step="0.5" value="4">
+              </div>
+              <div class="bb-field">
+                <label for="bbVol">Volume <span class="bb-val" id="bbVolVal">18%</span></label>
+                <input type="range" id="bbVol" min="0" max="100" step="1" value="18">
+              </div>
+              <div class="bb-field">
+                <label for="bbTimer">Session length</label>
+                <select id="bbTimer">
+                  <option value="0" selected>Off</option>
+                  <option value="5">5 minutes</option>
+                  <option value="10">10 minutes</option>
+                  <option value="20">20 minutes</option>
+                </select>
+              </div>
+            </div>
+
+            <p class="bb-status" role="status">Stopped.</p>
+          </div>
         </section>
 
         <!-- ============ LESSON 4: the grounded science ============ -->
